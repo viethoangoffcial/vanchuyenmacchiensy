@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mạc Chiến Sỹ Official - Chuyển Phát Nhanh Quốc Tế & Tài Chính Toàn Cầu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = { 
+            theme: { 
+                extend: { 
+                    colors: { 
+                        gold: { 
+                            300: '#fde047',
+                            400: '#facc15', 
+                            500: '#eab308', 
+                            600: '#ca8a04' 
+                        } 
+                    } 
+                } 
+            } 
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #f8fafc; overflow-x: hidden; }
+        .gold-gradient { background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%); }
+        .gold-text-gradient { background: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #ca8a04 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(234, 179, 8, 0.2); }
+        .glass-card:hover { border-color: rgba(234, 179, 8, 0.5); transition: all 0.3s ease; }
+        .glass-nav { background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(234, 179, 8, 0.15); }
+        .glow-gold { box-shadow: 0 0 25px rgba(234, 179, 8, 0.35); }
+        .floating { animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shadow-lg glow-gold floating">
+                        <i class="fa-solid fa-crown text-black text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-extrabold gold-text-gradient tracking-wide block">MẠC CHIẾN SỸ</span>
+                        <span class="text-xs text-gold-400 font-medium tracking-widest uppercase">Official Global</span>
+                    </div>
+                </a>
+                <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold">
+                    <a href="index.html" class="text-gold-400 transition">Trang Chủ</a>
+                    <a href="#about" class="text-gray-300 hover:text-gold-400 transition">Về Chúng Tôi</a>
+                    <a href="#services" class="text-gray-300 hover:text-gold-400 transition">Dịch Vụ</a>
+                    <a href="calc.html" class="text-gray-300 hover:text-gold-400 transition">Tính Cước</a>
+                    <a href="tracking.html" class="text-gray-300 hover:text-gold-400 transition">Tra Cứu Vận Đơn</a>
+                    <a href="money.html" class="text-gray-300 hover:text-gold-400 transition">Gửi Tiền Việt - Đài</a>
+                    <a href="order.html" class="text-gray-300 hover:text-gold-400 transition">Tạo Đơn Hàng</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="dashboard.html" class="px-4 py-2 bg-slate-800 border border-gold-500/40 text-gold-400 text-xs font-bold rounded-xl hover:bg-slate-700 transition">
+                        <i class="fa-solid fa-lock mr-1"></i> Quản Trị
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="pt-36 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative overflow-hidden rounded-3xl glass-card p-8 md:p-16 mb-12 shadow-2xl border border-gold-500/30" data-aos="fade-up">
+            <div class="absolute -right-20 -top-20 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-halved"></i> Uy Tín Đảm Bảo 100% - Bảo Hiểm Hàng Hóa
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                        Chuyển Phát Nhanh Quốc Tế & <span class="gold-text-gradient">Tài Chính Siêu Tốc</span>
+                    </h1>
+                    <p class="text-gray-300 text-base md:text-lg leading-relaxed">
+                        Hệ thống vận chuyển hàng đầu chuyên tuyến <span class="text-gold-400 font-semibold">Đài Loan 🇹🇼, Hàn Quốc 🇰🇷, Nhật Bản 🇯🇵, Mỹ, Úc...</span> kết hợp dịch vụ chuyển tiền hai chiều nhanh chóng, an toàn tuyệt đối.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="order.html" class="px-7 py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg glow-gold hover:scale-105 transition flex items-center">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Tạo Đơn Hàng Ngay
+                        </a>
+                        <a href="calc.html" class="px-7 py-4 bg-slate-800/80 border border-gold-500/40 text-gold-400 font-bold rounded-xl hover:bg-slate-700 transition flex items-center">
+                            <i class="fa-solid fa-calculator mr-2"></i> Tính Cước Nhanh
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center" data-aos="zoom-in">
+                    <div class="w-full max-w-md rounded-3xl p-8 glass-card border border-gold-500/40 glow-gold text-center relative">
+                        <div class="absolute -top-4 -right-4 px-4 py-1.5 bg-gold-500 text-black text-xs font-black rounded-full uppercase tracking-wider shadow-lg">
+                            VIP Partner
+                        </div>
+                        <div class="w-28 h-28 mx-auto mb-6 rounded-full gold-gradient flex items-center justify-center shadow-2xl floating">
+                            <i class="fa-solid fa-sack-dollar text-black text-5xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-extrabold text-gold-400 mb-2">Mạc Chiến Sỹ Official</h3>
+                        <p class="text-sm text-gray-300 mb-6">Trụ sở chính: Khu 5 Nông Trang, Việt Trì, Phú Thọ</p>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/60 text-left">
+                            <div>
+                                <span class="block text-xs text-gray-400">Hỗ trợ 24/7</span>
+                                <span class="text-sm font-bold text-white">Chuyên nghiệp</span>
+                            </div>
+                            <div>
+                                <span class="block text-xs text-gray-400">Giao dịch</span>
+                                <span class="text-sm font-bold text-gold-400">Nhanh chóng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS SECTION -->
+    <section class="py-12 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="fade-up">
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl md:text-4xl font-black text-gold-400 mb-1">10,000+</div>
+                    <div class="text-xs md:text-sm text-gray-400 font-medium">Đơn hàng thành công</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl md:text-4xl font-black text-gold-400 mb-1">5+</div>
+                    <div class="text-xs md:text-sm text-gray-400 font-medium">Quốc gia kết nối</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl md:text-4xl font-black text-gold-400 mb-1">99.8%</div>
+                    <div class="text-xs md:text-sm text-gray-400 font-medium">Khách hàng hài lòng</div>
+                </div>
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="text-3xl md:text-4xl font-black text-gold-400 mb-1">24/7</div>
+                    <div class="text-xs md:text-sm text-gray-400 font-medium">Hỗ trợ & Xử lý đơn</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" class="space-y-6">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase">
+                    Về Chúng Tôi
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                    Giải Pháp Toàn Diện Cho Nhu Cầu <span class="gold-text-gradient">Vận Chuyển & Tài Chính</span>
+                </h2>
+                <p class="text-gray-300 leading-relaxed">
+                    <strong class="text-white">Mạc Chiến Sỹ Official</strong> được thành lập với sứ mệnh kết nối giao thương và kiều hối một cách nhanh chóng, minh bạch và an toàn nhất. Chúng tôi thấu hiểu những khó khăn của kiều bào và các chủ shop khi giao thương quốc tế, từ đó tối ưu hóa từng khâu vận hành để mang lại chi phí tiết kiệm tối đa.
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <p class="text-sm text-gray-300"><strong class="text-white">Cam kết đền bù 100%</strong> nếu xảy ra mất mát, hư hỏng do lỗi vận chuyển theo chính sách bảo hiểm.</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <p class="text-sm text-gray-300"><strong class="text-white">Cập nhật hành trình liên tục</strong> qua hệ thống tra cứu vận đơn trực tuyến thông minh.</p>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="w-6 h-6 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <p class="text-sm text-gray-300"><strong class="text-white">Tỷ giá chuyển tiền cạnh tranh</strong>, hỗ trợ giao dịch hai chiều Việt Nam - Đài Loan cực kỳ linh hoạt.</p>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-left" class="grid grid-cols-2 gap-4">
+                <div class="glass-card p-6 rounded-3xl space-y-4 border border-gold-500/20">
+                    <div class="w-12 h-12 rounded-2xl gold-gradient flex items-center justify-center text-black font-bold text-xl">
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Vận Chuyển Hỏa Tốc</h3>
+                    <p class="text-xs text-gray-400">Bay thẳng hàng không, thời gian thông quan nhanh chóng, đúng hẹn.</p>
+                </div>
+                <div class="glass-card p-6 rounded-3xl space-y-4 border border-gold-500/20 mt-6">
+                    <div class="w-12 h-12 rounded-2xl gold-gradient flex items-center justify-center text-black font-bold text-xl">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Chuyển Tiền Nhanh</h3>
+                    <p class="text-xs text-gray-400">Nhận tiền ngay trong vài phút, tỷ giá tốt, thủ tục gọn lẹ an toàn.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-20 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase mb-4">
+                    Dịch Vụ Trọng Tâm
+                </div>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+                    Hệ Thống Dịch Vụ <span class="gold-text-gradient">Đẳng Cấp & Chuyên Nghiệp</span>
+                </h2>
+                <p class="text-gray-300 text-sm md:text-base">
+                    Chúng tôi cung cấp giải pháp toàn diện từ khâu đóng gói, vận chuyển quốc tế đến hỗ trợ tài chính kiều hối.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-3xl space-y-4 relative group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-box-archive"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Chuyển Phát Nhanh Quốc Tế</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Chuyên tuyến Đài Loan 🇹🇼, Hàn Quốc 🇰🇷, Nhật Bản 🇯🇵, Mỹ, Úc... Nhận gửi đa dạng mặt hàng từ thực phẩm, mỹ phẩm đến hàng cồng kềnh.
+                    </p>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <a href="order.html" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center">
+                            Tạo đơn hàng <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                        </a>
+                        <a href="calc.html" class="text-xs font-medium text-gray-400 hover:text-white">Tính cước</a>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-3xl space-y-4 relative group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-money-bill-transfer"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Chuyển Tiền Việt - Đài</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Dịch vụ chuyển tiền hai chiều Việt Nam - Đài Loan siêu tốc. Hỗ trợ tài khoản BVBank và các ngân hàng lớn với tỷ giá cực kỳ ưu đãi.
+                    </p>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <a href="money.html" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center">
+                            Gửi tiền ngay <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                        </a>
+                        <span class="text-xs text-gold-400 font-semibold">Tỷ giá tốt</span>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-3xl space-y-4 relative group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-magnifying-glass-location"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Tra Cứu & Quản Trị Đơn</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Hệ thống tra cứu vận đơn minh bạch theo mã tracking thời gian thực. Cung cấp trang quản trị riêng cho khách hàng sỉ và cộng tác viên.
+                    </p>
+                    <div class="pt-4 border-t border-slate-700/60 flex items-center justify-between">
+                        <a href="tracking.html" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center">
+                            Tra cứu vận đơn <i class="fa-solid fa-arrow-right ml-1.5"></i>
+                        </a>
+                        <a href="dashboard.html" class="text-xs font-medium text-gray-400 hover:text-white">Quản trị</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK PROCESS -->
+    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase mb-4">
+                Quy Trình Làm Việc
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+                4 Bước Giao Hàng <span class="gold-text-gradient">Đơn Giản & Nhanh Chóng</span>
+            </h2>
+            <p class="text-gray-300 text-sm md:text-base">
+                Quy trình tối ưu hóa giúp bạn gửi hàng quốc tế chưa bao giờ dễ dàng đến thế.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="glass-card p-6 rounded-2xl text-center space-y-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-12 h-12 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-lg shadow-lg">1</div>
+                <h3 class="font-bold text-white text-base">Tạo Đơn Hàng</h3>
+                <p class="text-xs text-gray-400">Điền thông tin người gửi, người nhận và chi tiết hàng hóa trực tuyến.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center space-y-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-12 h-12 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-lg shadow-lg">2</div>
+                <h3 class="font-bold text-white text-base">Gửi Hàng & Kiểm Tra</h3>
+                <p class="text-xs text-gray-400">Mang hàng đến kho hoặc gọi ship nhận tận nơi, cân đo minh bạch.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center space-y-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-12 h-12 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-lg shadow-lg">3</div>
+                <h3 class="font-bold text-white text-base">Vận Chuyển Quốc Tế</h3>
+                <p class="text-xs text-gray-400">Hàng hóa được bay chuyến nhanh, thông quan an toàn và bảo mật.</p>
+            </div>
+            <div class="glass-card p-6 rounded-2xl text-center space-y-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-12 h-12 mx-auto rounded-full gold-gradient text-black font-extrabold flex items-center justify-center text-lg shadow-lg">4</div>
+                <h3 class="font-bold text-white text-base">Giao Tận Tay</h3>
+                <p class="text-xs text-gray-400">Người nhận kiểm tra hàng và nhận tận nơi tại nước đến hoàn hảo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD APP SECTION (NEW) -->
+    <section class="py-20 relative overflow-hidden bg-slate-900/60 border-y border-slate-800">
+        <div class="absolute -left-20 top-1/2 -translate-y-1/2 w-80 h-80 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-card p-8 md:p-14 rounded-3xl border border-gold-500/40 glow-gold grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" data-aos="fade-right">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-mobile-screen-button"></i> Ứng Dụng Di Động
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                        Tải Ứng Dụng <span class="gold-text-gradient">Mạc Chiến Sỹ</span> Ngay Hôm Nay
+                    </h2>
+                    <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                        Trải nghiệm quản lý đơn hàng, tra cứu vận đơn tức thì, nhận thông báo đẩy về lộ trình hàng hóa và tỷ giá chuyển tiền siêu tốc ngay trên điện thoại di động của bạn.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-center space-x-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-bolt text-gold-400 text-xl"></i>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Siêu Tốc</h4>
+                                <p class="text-[10px] text-gray-400">Cập nhật real-time</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3 bg-slate-800/80 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-shield-cat text-gold-400 text-xl"></i>
+                            <div>
+                                <h4 class="text-xs font-bold text-white">Bảo Mật</h4>
+                                <p class="text-[10px] text-gray-400">An toàn tuyệt đối</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <!-- App Store Button -->
+                        <a href="#" class="px-5 py-3 bg-black border border-gold-500/40 rounded-xl hover:border-gold-400 transition flex items-center space-x-3 group">
+                            <i class="fa-brands fa-apple text-2xl text-white group-hover:text-gold-400 transition"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400 uppercase">Tải về trên</span>
+                                <span class="text-xs font-bold text-white">App Store</span>
+                            </div>
+                        </a>
+                        <!-- Google Play Button -->
+                        <a href="#" class="px-5 py-3 bg-black border border-gold-500/40 rounded-xl hover:border-gold-400 transition flex items-center space-x-3 group">
+                            <i class="fa-brands fa-google-play text-xl text-white group-hover:text-gold-400 transition"></i>
+                            <div class="text-left">
+                                <span class="block text-[10px] text-gray-400 uppercase">Tải về trên</span>
+                                <span class="text-xs font-bold text-white">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center" data-aos="fade-left">
+                    <div class="relative w-full max-w-xs bg-slate-950 p-4 rounded-[40px] border-4 border-gold-500/30 shadow-2xl glow-gold text-center">
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-4 bg-slate-900 rounded-b-xl"></div>
+                        <div class="py-8 space-y-6">
+                            <div class="w-16 h-16 mx-auto rounded-full gold-gradient flex items-center justify-center text-black shadow-lg floating">
+                                <i class="fa-solid fa-qrcode text-2xl"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-white text-base">Quét Mã QR Tải App</h4>
+                                <p class="text-xs text-gray-400">Hỗ trợ cả iOS và Android</p>
+                            </div>
+                            <!-- Mock QR Code Box -->
+                            <div class="w-40 h-40 mx-auto bg-white p-3 rounded-2xl flex items-center justify-center shadow-inner">
+                                <div class="w-full h-full border-2 border-dashed border-slate-400 flex flex-col items-center justify-center text-slate-800">
+                                    <i class="fa-solid fa-qrcode text-5xl text-slate-900 mb-1"></i>
+                                    <span class="text-[9px] font-bold text-slate-600">QUÉT ĐỂ TẢI APP</span>
+                                </div>
+                            </div>
+                            <span class="inline-block text-[10px] text-gold-400 font-semibold bg-gold-500/10 px-3 py-1 rounded-full border border-gold-500/20">
+                                Phiên bản v2026.1 Official
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="glass-nav py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center shadow-lg">
+                            <i class="fa-solid fa-crown text-black text-sm"></i>
+                        </div>
+                        <span class="text-lg font-extrabold gold-text-gradient">MẠC CHIẾN SỸ</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Hệ thống chuyển phát nhanh quốc tế và tài chính kiều hối hàng đầu, uy tín và tận tâm phục vụ khách hàng toàn cầu.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Liên Kết Nhanh</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="index.html" class="hover:text-gold-400 transition">Trang Chủ</a></li>
+                        <li><a href="calc.html" class="hover:text-gold-400 transition">Tính Cước Vận Chuyển</a></li>
+                        <li><a href="tracking.html" class="hover:text-gold-400 transition">Tra Cứu Vận Đơn</a></li>
+                        <li><a href="money.html" class="hover:text-gold-400 transition">Gửi Tiền Việt - Đài</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Dịch Vụ</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="order.html" class="hover:text-gold-400 transition">Tạo Đơn Hàng Mới</a></li>
+                        <li><a href="dashboard.html" class="hover:text-gold-400 transition">Trang Quản Trị / CTV</a></li>
+                        <li><span class="text-gray-500">Bảo Hiểm Hàng Hóa 100%</span></li>
+                        <li><span class="text-gray-500">Hỗ Trợ Thông Quan Nhanh</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Trụ Sở Chính</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed mb-2">
+                        <i class="fa-solid fa-location-dot text-gold-400 mr-2"></i> Khu 5 Nông Trang, Việt Trì, Phú Thọ
+                    </p>
+                    <p class="text-xs text-gray-400">
+                        <i class="fa-solid fa-phone text-gold-400 mr-2"></i> Hỗ trợ 24/7 trực tuyến
+                    </p>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-gray-500">
+                <p>© 2026 Mạc Chiến Sỹ Official. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+</html>
