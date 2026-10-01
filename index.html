@@ -88,7 +88,6 @@
                     <a href="#tien-ich" class="text-gray-300 hover:text-gold-400 transition">Tiện Ích</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-3">
-                    <!-- Nút Vào App mở Modal chọn 3 mục -->
                     <button onclick="moModalVaoApp()" class="px-5 py-2.5 gold-gradient text-black text-xs font-extrabold rounded-xl hover:scale-105 transition shadow-lg glow-gold flex items-center">
                         <i class="fa-solid fa-rocket mr-1.5 text-sm"></i> Vào App
                     </button>
@@ -100,7 +99,6 @@
     <!-- MODAL POPUP CHỌN 3 MỤC (VÀO APP) -->
     <div id="modal-vao-app" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden p-4">
         <div class="glass-card w-full max-w-md p-8 rounded-3xl border border-gold-500/50 glow-gold relative space-y-6" data-aos="zoom-in">
-            <!-- Nút Đóng -->
             <button onclick="dongModalVaoApp()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800 text-gray-400 hover:text-white flex items-center justify-center transition">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
@@ -113,7 +111,6 @@
                 <p class="text-xs text-gray-300">Vui lòng chọn phân quyền truy cập phù hợp với bạn:</p>
             </div>
 
-            <!-- 3 Mục Lựa Chọn (Tabs / Links) -->
             <div class="space-y-3.5 pt-2">
                 <a href="khachhang.html" class="flex items-center justify-between p-4 rounded-2xl bg-slate-800/90 border border-gold-500/20 hover:border-gold-500 hover:bg-slate-800 transition group shadow-md">
                     <div class="flex items-center space-x-3.5">
@@ -533,20 +530,71 @@
         </div>
     </section>
 
-    <!-- PHẦN BẢNG GIÁ -->
+    <!-- PHẦN BẢNG GIÁ (ĐÃ ĐƯỢC NÂNG CẤP HOÀN CHỈNH) -->
     <section id="bang-gia" class="py-20 bg-slate-900/30 border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase mb-4">
-                    Bảng Giá Cước Tham Khảo
+                    Bảng Giá Cước Chi Tiết 2026
                 </div>
                 <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-                    Cước Phí Cạnh Tranh - <span class="gold-text-gradient">Không Phát Sinh Phụ Phí</span>
+                    Cước Phí Cạnh Tranh - <span class="gold-text-gradient">Minh Bạch & Tiết Kiệm Tối Đa</span>
                 </h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    Biểu phí chuẩn xác cho từng tuyến vận chuyển quốc tế và dịch vụ kiều hối tài chính, không phát sinh chi phí ẩn.
+                </p>
             </div>
 
+            <!-- BẢNG SO SÁNH GIÁ CHI TIẾT DẠNG BẢNG (TABLE) -->
+            <div class="glass-card p-6 md:p-8 rounded-3xl overflow-x-auto border border-gold-500/30 mb-12" data-aos="fade-up">
+                <h3 class="text-lg font-bold text-white mb-6 flex items-center"><i class="fa-solid fa-table-cells text-gold-400 mr-2"></i> Bảng Tổng Hợp Cước Phí Vận Chuyển & Dịch Vụ</h3>
+                <table class="w-full text-left text-xs md:text-sm text-gray-300">
+                    <thead class="bg-slate-800 text-gold-400 uppercase font-bold">
+                        <tr>
+                            <th class="p-3.5 rounded-l-xl">Tuyến / Dịch Vụ</th>
+                            <th class="p-3.5">Mặt Hàng Áp Dụng</th>
+                            <th class="p-3.5">Thời Gian</th>
+                            <th class="p-3.5">Đơn Giá Tham Khảo</th>
+                            <th class="p-3.5 rounded-r-xl">Bảo Hiểm & Cam Kết</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800">
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-3.5 font-bold text-white flex items-center"><i class="fa-solid fa-plane-departure text-gold-400 mr-2"></i> Đài Loan (🇹🇼) Tiêu Chuẩn</td>
+                            <td class="p-3.5">Quần áo, mỹ phẩm, giày dép, hàng khô</td>
+                            <td class="p-3.5 text-gold-400 font-semibold">2 - 4 Ngày</td>
+                            <td class="p-3.5 font-bold text-white">Từ 45.000đ / kg</td>
+                            <td class="p-3.5">Bảo hiểm 100% giá trị hàng hóa</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-3.5 font-bold text-white flex items-center"><i class="fa-solid fa-plane-up text-gold-400 mr-2"></i> Hàn Quốc (🇰🇷) Hỏa Tốc</td>
+                            <td class="p-3.5">Mỹ phẩm, sâm, linh kiện điện tử</td>
+                            <td class="p-3.5 text-gold-400 font-semibold">1 - 3 Ngày</td>
+                            <td class="p-3.5 font-bold text-white">Từ 65.000đ / kg</td>
+                            <td class="p-3.5">Bay thẳng hàng ngày, thông quan nhanh</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-3.5 font-bold text-white flex items-center"><i class="fa-solid fa-plane text-gold-400 mr-2"></i> Nhật Bản (🇯🇵) Đặc Biệt</td>
+                            <td class="p-3.5">Thực phẩm chức năng, đồ gia dụng, thời trang</td>
+                            <td class="p-3.5 text-gold-400 font-semibold">2 - 3 Ngày</td>
+                            <td class="p-3.5 font-bold text-white">Từ 70.000đ / kg</td>
+                            <td class="p-3.5">Đóng gói miễn phí, cân đo chính xác</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/40 transition">
+                            <td class="p-3.5 font-bold text-white flex items-center"><i class="fa-solid fa-money-bill-transfer text-gold-400 mr-2"></i> Kiều Hối Việt - Đài</td>
+                            <td class="p-3.5">Chuyển tiền hai chiều Việt Nam - Đài Loan</td>
+                            <td class="p-3.5 text-gold-400 font-semibold">Nhận ngay trong phút</td>
+                            <td class="p-3.5 font-bold text-gold-400">Tỷ giá siêu tốt / Phí thấp</td>
+                            <td class="p-3.5">Hỗ trợ tài khoản BVBank 24/7 an toàn</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CÁC THẺ CARD BẢNG GIÁ CHI TIẾT -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl space-y-6 relative border border-slate-700" data-aos="fade-up">
+                <!-- Thẻ 1 -->
+                <div class="glass-card p-8 rounded-3xl space-y-6 relative border border-slate-700 flex flex-col justify-between" data-aos="fade-up">
                     <div class="text-center space-y-2">
                         <span class="px-3 py-1 rounded-full bg-slate-800 text-xs font-bold text-gray-300">Tuyến Đài Loan 🇹🇼</span>
                         <h3 class="text-xl font-bold text-white pt-2">Hàng Tiêu Chuẩn</h3>
@@ -556,11 +604,13 @@
                         <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Hỗ trợ đóng gói miễn phí</li>
                         <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Cân đo minh bạch chính xác</li>
                         <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Bảo hiểm hàng hóa 100%</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Giao tận tay người nhận tại Đài Bắc, Đài Trung, Cao Hùng</li>
                     </ul>
-                    <a href="#tien-ich" class="block w-full py-3 bg-slate-800 hover:bg-slate-700 text-gold-400 font-bold rounded-xl text-center transition">Tính Cước Ngay</a>
+                    <a href="#tien-ich" class="block w-full py-3 bg-slate-800 hover:bg-slate-700 text-gold-400 font-bold rounded-xl text-center transition shadow">Tính Cước Ngay</a>
                 </div>
 
-                <div class="glass-card p-8 rounded-3xl space-y-6 relative border border-gold-500 glow-gold transform md:-translate-y-3 bg-slate-900/90" data-aos="fade-up" data-aos-delay="100">
+                <!-- Thẻ 2 (Phổ biến nhất) -->
+                <div class="glass-card p-8 rounded-3xl space-y-6 relative border border-gold-500 glow-gold transform md:-translate-y-3 bg-slate-900/90 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
                     <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gold-500 text-black text-[10px] font-black uppercase rounded-full tracking-wider shadow">
                         Phổ Biến Nhất
                     </div>
@@ -571,24 +621,27 @@
                     </div>
                     <ul class="space-y-3 text-xs text-gray-300 border-t border-b border-slate-800 py-6">
                         <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Ưu tiên bay chuyến sớm nhất</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Thông quan nhanh chóng</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Bảo hiểm toàn diện 100%</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Thông quan nhanh chóng, không trì hoãn</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Bảo hiểm toàn diện 100% giá trị</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Cập nhật hành trình real-time qua Telegram Bot</li>
                     </ul>
                     <a href="#tien-ich" class="block w-full py-3 gold-gradient text-black font-extrabold rounded-xl text-center shadow-lg transition hover:scale-105">Tạo Đơn Ngay</a>
                 </div>
 
-                <div class="glass-card p-8 rounded-3xl space-y-6 relative border border-slate-700" data-aos="fade-up" data-aos-delay="200">
+                <!-- Thẻ 3 -->
+                <div class="glass-card p-8 rounded-3xl space-y-6 relative border border-slate-700 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
                     <div class="text-center space-y-2">
                         <span class="px-3 py-1 rounded-full bg-slate-800 text-xs font-bold text-gray-300">Chuyển Tiền Kiều Hối</span>
                         <h3 class="text-xl font-bold text-white pt-2">Việt - Đài Hai Chiều</h3>
                         <div class="text-3xl font-black text-gold-400">Tỷ Giá Tốt<span class="text-xs font-normal text-gray-400 block mt-1">Nhận ngay trong phút</span></div>
                     </div>
                     <ul class="space-y-3 text-xs text-gray-300 border-t border-b border-slate-800 py-6">
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Giao dịch trực tuyến an toàn</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Hỗ trợ tài khoản BVBank</li>
-                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Không giới hạn hạn mức</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Giao dịch trực tuyến an toàn tuyệt đối</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Hỗ trợ tài khoản BVBank 24/7</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Không giới hạn hạn mức giao dịch</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-gold-400 mr-2"></i> Xác nhận thành công qua thông báo tức thì</li>
                     </ul>
-                    <a href="#tien-ich" class="block w-full py-3 bg-slate-800 hover:bg-slate-700 text-gold-400 font-bold rounded-xl text-center transition">Gửi Tiền Ngay</a>
+                    <a href="#tien-ich" class="block w-full py-3 bg-slate-800 hover:bg-slate-700 text-gold-400 font-bold rounded-xl text-center transition shadow">Gửi Tiền Ngay</a>
                 </div>
             </div>
         </div>
@@ -921,7 +974,6 @@
             modal.classList.add('hidden');
         }
 
-        // Đóng modal khi click ra ngoài vùng nội dung modal
         window.onclick = function(event) {
             const modal = document.getElementById('modal-vao-app');
             if (event.target === modal) {
@@ -949,89 +1001,94 @@
             const randomItem = sampleItems[Math.floor(Math.random() * sampleItems.length)];
             const randomRoute = sampleRoutes[Math.floor(Math.random() * sampleRoutes.length)];
             const randomStatus = sampleStatuses[Math.floor(Math.random() * sampleStatuses.length)];
-            
-            const now = new Date();
-            const timeStr = now.toLocaleTimeString('vi-VN');
 
-            const itemHTML = `
-                <div class="live-order-slide p-4 rounded-2xl bg-slate-800/80 border border-gold-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-extrabold text-xs flex-shrink-0">
-                            <i class="fa-solid fa-box"></i>
-                        </div>
-                        <div>
-                            <div class="flex items-center space-x-2">
-                                <span class="text-xs font-bold text-gold-400">${randomCode}</span>
-                                <span class="text-[10px] text-gray-400">(${randomRoute})</span>
-                            </div>
-                            <p class="text-xs text-white font-medium mt-0.5">${randomSender} ➔ ${randomReceiver}</p>
-                            <p class="text-[11px] text-gray-300 mt-0.5"><i class="fa-solid fa-tag text-gold-400 mr-1"></i> ${randomItem}</p>
-                        </div>
+            const itemElement = document.createElement('div');
+            itemElement.className = "live-order-slide p-4 rounded-2xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-between text-xs";
+            itemElement.innerHTML = `
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0">
+                        <i class="fa-solid fa-box text-xs"></i>
                     </div>
-                    <div class="flex sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-0 border-slate-700">
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${randomStatus.color}">${randomStatus.text}</span>
-                        <span class="text-[10px] text-gray-400 sm:mt-1">${timeStr}</span>
+                    <div>
+                        <div class="font-bold text-white flex items-center space-x-2">
+                            <span>${randomCode}</span>
+                            <span class="text-[10px] text-gold-400 px-2 py-0.5 rounded bg-gold-500/10 border border-gold-500/20">${randomRoute}</span>
+                        </div>
+                        <div class="text-[11px] text-gray-300 mt-0.5">${randomSender} ➔ ${randomReceiver} | <span class="text-gray-400">${randomItem}</span></div>
                     </div>
                 </div>
+                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${randomStatus.color} whitespace-nowrap">${randomStatus.text}</span>
             `;
 
-            container.insertAdjacentHTML('afterbegin', itemHTML);
-
+            container.prepend(itemElement);
             if (container.children.length > 5) {
                 container.removeChild(container.lastChild);
             }
         }
 
-        for(let i=0; i<4; i++) {
-            setTimeout(() => taoDonHangLiveMoi(), i * 300);
-        }
-        setInterval(taoDonHangLiveMoi, 3500);
+        setInterval(taoDonHangLiveMoi, 4000);
+        for(let i=0; i<3; i++) { taoDonHangLiveMoi(); }
 
-        function chuyenTab(tabId) {
-            ['calc', 'order', 'tracking', 'money'].forEach(id => {
-                document.getElementById('tab-' + id).classList.add('hidden');
-                document.getElementById('btn-' + id).className = 'px-6 py-3 rounded-xl font-bold text-xs bg-slate-800 text-gray-300 hover:bg-slate-700 transition border border-slate-700';
+        // Chuyển tab tiện ích
+        function chuyenTab(tabName) {
+            ['calc', 'order', 'tracking', 'money'].forEach(t => {
+                const el = document.getElementById('tab-' + t);
+                const btn = document.getElementById('btn-' + t);
+                if(el) el.classList.add('hidden');
+                if(btn) {
+                    btn.className = "px-6 py-3 rounded-xl font-bold text-xs bg-slate-800 text-gray-300 hover:bg-slate-700 transition border border-slate-700";
+                }
             });
-            document.getElementById('tab-' + tabId).classList.remove('hidden');
-            document.getElementById('btn-' + tabId).className = 'px-6 py-3 rounded-xl font-bold text-xs gold-gradient text-black shadow-lg transition';
+            const targetEl = document.getElementById('tab-' + tabName);
+            const targetBtn = document.getElementById('btn-' + tabName);
+            if(targetEl) targetEl.classList.remove('hidden');
+            if(targetBtn) {
+                targetBtn.className = "px-6 py-3 rounded-xl font-bold text-xs gold-gradient text-black shadow-lg transition";
+            }
         }
 
+        // Tính cước
         function tinhCuocPhi() {
             const route = document.getElementById('calc-route').value;
-            const weight = parseFloat(document.getElementById('calc-weight').value) || 0;
-            let rate = 150000;
-            if (route === 'kr') rate = 180000;
-            if (route === 'jp') rate = 200000;
+            const weight = parseFloat(document.getElementById('calc-weight').value) || 1;
+            let rate = 45000;
+            if (route === 'kr') rate = 65000;
+            if (route === 'jp') rate = 70000;
             
             const total = weight * rate;
-            const resultDiv = document.getElementById('calc-result');
-            resultDiv.classList.remove('hidden');
-            resultDiv.innerHTML = `Cước phí dự kiến cho ${weight} kg là: <span class="text-white text-lg">${total.toLocaleString('vi-VN')} VNĐ</span>`;
+            const res = document.getElementById('calc-result');
+            res.classList.remove('hidden');
+            res.innerHTML = `Cước phí dự kiến cho ${weight} kg: <span class="text-white text-base">${total.toLocaleString()} VNĐ</span> (Đã bao gồm đóng gói & bảo hiểm)`;
         }
 
-        function traCuuVanDon() {
-            const code = document.getElementById('tracking-code').value.trim();
-            const resDiv = document.getElementById('tracking-result');
-            if(!code) {
-                alert('Vui lòng nhập mã vận đơn!');
-                return;
-            }
-            document.getElementById('res-code').innerText = code.toUpperCase();
-            resDiv.classList.remove('hidden');
-        }
-
+        // Tạo đơn hàng giả lập
         function guiDonHang(e) {
             e.preventDefault();
-            alert('Tạo đơn hàng thành công! Dữ liệu đã được đồng bộ lên hệ thống.');
+            alert("Tạo đơn hàng thành công! Hệ thống đã đồng bộ dữ liệu về Google Sheets và gửi thông báo qua Telegram Bot.");
             e.target.reset();
         }
 
+        // Tra cứu vận đơn
+        function traCuuVanDon() {
+            const code = document.getElementById('tracking-code').value.trim();
+            const resBox = document.getElementById('tracking-result');
+            const resCode = document.getElementById('res-code');
+            if(!code) {
+                alert("Vui lòng nhập mã vận đơn hoặc số điện thoại!");
+                return;
+            }
+            resCode.innerText = code.toUpperCase();
+            resBox.classList.remove('hidden');
+        }
+
+        // Chuyển tiền
         function guiYeuCauChuyenTien(e) {
             e.preventDefault();
-            alert('Đã gửi yêu cầu chuyển tiền kiều hối thành công! Nhân viên sẽ liên hệ xác nhận.');
+            alert("Gửi yêu cầu chuyển tiền kiều hối thành công! Nhân viên sẽ liên hệ xác nhận tài khoản BVBank ngay.");
             e.target.reset();
         }
 
+        // Chatbot Widget Toggle
         function toggleChat() {
             const box = document.getElementById('chat-box');
             box.classList.toggle('hidden');
@@ -1045,35 +1102,38 @@
 
         function xuLyTinNhanNguoiDung() {
             const input = document.getElementById('chat-input');
-            const msg = input.value.trim();
-            if(!msg) return;
+            const msgContainer = document.getElementById('chat-messages');
+            const text = input.value.trim();
+            if(!text) return;
 
-            const messages = document.getElementById('chat-messages');
-            messages.innerHTML += `
-                <div class="flex justify-end space-x-2">
-                    <div class="bg-gold-500 text-black p-3 rounded-2xl rounded-tr-none max-w-[80%] font-medium leading-relaxed">${msg}</div>
-                </div>
-            `;
+            // Tin nhắn người dùng
+            const userDiv = document.createElement('div');
+            userDiv.className = "flex items-start justify-end space-x-2";
+            userDiv.innerHTML = `<div class="bg-amber-500 text-black p-3 rounded-2xl rounded-tr-none max-w-[80%] font-medium">${text}</div>`;
+            msgContainer.appendChild(userDiv);
             input.value = '';
-            messages.scrollTop = messages.scrollHeight;
+            msgContainer.scrollTop = msgContainer.scrollHeight;
 
+            // Phản hồi AI giả lập
             setTimeout(() => {
-                let reply = "Cảm ơn bạn đã liên hệ. Bạn vui lòng nhắn trực tiếp qua Zalo 034.6984.269 hoặc mở menu 'Vào App' để lựa chọn khu vực phù hợp nhất nhé!";
-                if(msg.toLowerCase().includes('đài loan')) {
-                    reply = "Tuyến Đài Loan khởi hành chuyến bay hàng ngày, cước phí siêu tiết kiệm và hỗ trợ giao tận nhà!";
-                } else if(msg.toLowerCase().includes('vào app')) {
-                    reply = "Bạn có thể bấm vào nút 'Vào App' trên thanh điều hướng để chọn truy cập nhanh vào Khách Hàng, Admin hoặc Cộng Tác Viên.";
-                } else if(msg.toLowerCase().includes('tỷ giá')) {
-                    reply = "Tỷ giá chuyển tiền Việt - Đài hôm nay cực tốt qua cổng BVBank, cập nhật theo thời gian thực.";
+                let reply = "Cảm ơn bạn đã liên hệ Mạc Chiến Sỹ. Bạn có thể sử dụng các tiện ích tính cước hoặc vào app quản trị để thao tác chi tiết nhé!";
+                if(text.toLowerCase().includes('đài loan') || text.toLowerCase().includes('cước')) {
+                    reply = "Cước phí tuyến Đài Loan tiêu chuẩn từ 45.000đ/kg, thời gian vận chuyển 2-4 ngày, bảo hiểm hàng hóa 100%!";
+                } else if(text.toLowerCase().includes('vào app') || text.toLowerCase().includes('hệ thống')) {
+                    reply = "Bạn hãy bấm nút 'Vào App' ở thanh điều hướng phía trên để chọn truy cập giao diện Khách hàng, Admin hoặc CTV nhé.";
+                } else if(text.toLowerCase().includes('tỷ giá') || text.toLowerCase().includes('tiền')) {
+                    reply = "Tỷ giá chuyển tiền Việt - Đài hôm nay cực tốt, hỗ trợ giao dịch qua tài khoản BVBank an toàn 24/7.";
                 }
-                messages.innerHTML += `
-                    <div class="flex items-start space-x-2">
-                        <div class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0 text-xs">AI</div>
-                        <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">${reply}</div>
-                    </div>
+
+                const aiDiv = document.createElement('div');
+                aiDiv.className = "flex items-start space-x-2";
+                aiDiv.innerHTML = `
+                    <div class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0 text-xs">AI</div>
+                    <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">${reply}</div>
                 `;
-                messages.scrollTop = messages.scrollHeight;
-            }, 800);
+                msgContainer.appendChild(aiDiv);
+                msgContainer.scrollTop = msgContainer.scrollHeight;
+            }, 600);
         }
     </script>
 </body>
