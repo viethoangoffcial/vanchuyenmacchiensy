@@ -66,7 +66,7 @@
     <nav class="sticky top-0 left-0 right-0 z-40 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <a href="#trang-chu" class="flex items-center space-x-3 group">
+                <a href="index.html" class="flex items-center space-x-3 group">
                     <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shadow-lg glow-gold floating">
                         <i class="fa-solid fa-crown text-black text-xl"></i>
                     </div>
@@ -76,7 +76,7 @@
                     </div>
                 </a>
                 <div class="hidden lg:flex items-center space-x-4 text-xs font-semibold">
-                    <a href="#trang-chu" class="text-gold-400 transition">Trang Chủ</a>
+                    <a href="index.html" class="text-gold-400 transition">Trang Chủ</a>
                     <a href="#gioi-thieu-app" class="text-gray-300 hover:text-gold-400 transition">Giới Thiệu App</a>
                     <a href="#gioi-thieu-quan-tri" class="text-gray-300 hover:text-gold-400 transition">Quản Trị Viên</a>
                     <a href="#don-hang-live" class="text-gray-300 hover:text-gold-400 transition flex items-center">
@@ -88,7 +88,7 @@
                     <a href="#tien-ich" class="text-gray-300 hover:text-gold-400 transition">Tiện Ích</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-3">
-                    <a href="#quan-tri" class="px-4 py-2.5 bg-slate-800 border border-gold-500/40 text-gold-400 text-xs font-bold rounded-xl hover:bg-slate-700 transition shadow-md">
+                    <a href="admin.html" class="px-4 py-2.5 bg-slate-800 border border-gold-500/40 text-gold-400 text-xs font-bold rounded-xl hover:bg-slate-700 transition shadow-md">
                         <i class="fa-solid fa-lock mr-1"></i> Đăng Nhập Quản Trị
                     </a>
                 </div>
@@ -112,7 +112,7 @@
                         Chuyên tuyến <span class="text-gold-400 font-semibold">Đài Loan 🇹🇼, Hàn Quốc 🇰🇷, Nhật Bản 🇯🇵</span> kết hợp trang quản trị độc quyền cho Admin và hệ thống Cộng Tác Viên (CTV) chuyên nghiệp.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="#quan-tri" class="px-7 py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg glow-gold hover:scale-105 transition flex items-center">
+                        <a href="admin.html" class="px-7 py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg glow-gold hover:scale-105 transition flex items-center">
                             <i class="fa-solid fa-gauge-high mr-2"></i> Trải Nghiệm Trang Quản Trị
                         </a>
                         <a href="#don-hang-live" class="px-7 py-4 bg-slate-800/80 border border-gold-500/40 text-gold-400 font-bold rounded-xl hover:bg-slate-700 transition flex items-center">
@@ -224,7 +224,7 @@
                             <span class="text-gold-400 font-bold">Bảo mật SSL</span>
                         </div>
                     </div>
-                    <a href="#quan-tri" class="block text-center py-3 gold-gradient text-black font-extrabold rounded-xl text-xs shadow hover:scale-105 transition">Truy Cập Trang Quản Trị Ngay</a>
+                    <a href="admin.html" class="block text-center py-3 gold-gradient text-black font-extrabold rounded-xl text-xs shadow hover:scale-105 transition">Truy Cập Trang Quản Trị Ngay</a>
                 </div>
             </div>
         </div>
@@ -419,7 +419,7 @@
                         <a href="#tien-ich" class="text-xs font-bold text-gold-400 hover:text-gold-300 flex items-center">
                             Tra cứu vận đơn <i class="fa-solid fa-arrow-right ml-1.5"></i>
                         </a>
-                        <a href="#quan-tri" class="text-xs font-medium text-gray-400 hover:text-white">Quản trị</a>
+                        <a href="admin.html" class="text-xs font-medium text-gray-400 hover:text-white">Quản trị</a>
                     </div>
                 </div>
             </div>
@@ -738,7 +738,7 @@
                 <div>
                     <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Liên Kết Nhanh</h4>
                     <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="#trang-chu" class="hover:text-gold-400 transition">Trang Chủ</a></li>
+                        <li><a href="index.html" class="hover:text-gold-400 transition">Trang Chủ</a></li>
                         <li><a href="#gioi-thieu-quan-tri" class="hover:text-gold-400 transition">Trang Quản Trị Viên</a></li>
                         <li><a href="#don-hang-live" class="hover:text-gold-400 transition">Live Đơn Hàng</a></li>
                         <li><a href="#bang-gia" class="hover:text-gold-400 transition">Bảng Giá Cước</a></li>
@@ -888,95 +888,84 @@
         }
 
         function tinhCuocPhi() {
-            const weight = parseFloat(document.getElementById('calc-weight').value) || 0;
             const route = document.getElementById('calc-route').value;
+            const weight = parseFloat(document.getElementById('calc-weight').value) || 0;
             let rate = 150000;
             if (route === 'kr') rate = 180000;
-            if (route === 'jp') rate = 190000;
-
+            if (route === 'jp') rate = 200000;
+            
             const total = weight * rate;
             const resultDiv = document.getElementById('calc-result');
             resultDiv.classList.remove('hidden');
-            resultDiv.innerHTML = `Cước phí dự kiến cho ${weight} kg: <span class="text-white text-base">${total.toLocaleString()} VNĐ</span> (Đã bao gồm đóng gói & bảo hiểm)`;
-        }
-
-        function guiDonHang(e) {
-            e.preventDefault();
-            alert('Tạo đơn hàng thành công! Mã vận đơn đã được đẩy vào hệ thống Live Feed và đồng bộ Telegram Bot.');
-            taoDonHangLiveMoi();
+            resultDiv.innerHTML = `Cước phí dự kiến cho ${weight} kg là: <span class="text-white text-lg">${total.toLocaleString('vi-VN')} VNĐ</span>`;
         }
 
         function traCuuVanDon() {
             const code = document.getElementById('tracking-code').value.trim();
-            if (!code) {
+            const resDiv = document.getElementById('tracking-result');
+            if(!code) {
                 alert('Vui lòng nhập mã vận đơn!');
                 return;
             }
-            document.getElementById('res-code').innerText = code;
-            document.getElementById('tracking-result').classList.remove('hidden');
+            document.getElementById('res-code').innerText = code.toUpperCase();
+            resDiv.classList.remove('hidden');
+        }
+
+        function guiDonHang(e) {
+            e.preventDefault();
+            alert('Tạo đơn hàng thành công! Dữ liệu đã được đồng bộ lên hệ thống.');
+            e.target.reset();
         }
 
         function guiYeuCauChuyenTien(e) {
             e.preventDefault();
-            alert('Yêu cầu chuyển tiền đã được ghi nhận! Hệ thống BVBank đang xử lý giao dịch kiều hối của bạn.');
+            alert('Đã gửi yêu cầu chuyển tiền kiều hối thành công! Nhân viên sẽ liên hệ xác nhận.');
+            e.target.reset();
         }
 
         function toggleChat() {
-            document.getElementById('chat-box').classList.toggle('hidden');
+            const box = document.getElementById('chat-box');
+            box.classList.toggle('hidden');
         }
 
-        function themTinNhan(nguoiGui, text) {
-            const chatMessages = document.getElementById('chat-messages');
-            const isUser = nguoiGui === 'user';
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `flex items-start space-x-2 ${isUser ? 'justify-end' : ''}`;
-            
-            if (!isUser) {
-                messageDiv.innerHTML = `
-                    <div class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0 text-xs">AI</div>
-                    <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">${text}</div>
-                `;
-            } else {
-                messageDiv.innerHTML = `
-                    <div class="gold-gradient p-3 rounded-2xl rounded-tr-none text-black font-medium max-w-[80%] leading-relaxed">${text}</div>
-                `;
-            }
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function phanHoiBot(userText) {
-            setTimeout(() => {
-                let reply = "Cảm ơn bạn đã liên hệ. Để được tư vấn chi tiết và nhanh chóng nhất, bạn vui lòng nhắn trực tiếp qua Zalo/Line hoặc gọi hotline nhé!";
-                const lower = userText.toLowerCase();
-                if (lower.includes('đài loan') || lower.includes('cước')) {
-                    reply = "Cước phí đi Đài Loan dao động theo trọng lượng hàng hóa, cam kết giá cạnh tranh, không phát sinh phụ phí và hỗ trợ đóng gói miễn phí!";
-                } else if (lower.includes('quản trị') || lower.includes('admin')) {
-                    reply = "Phần Giới Thiệu Trang Quản Trị nằm ngay phía trên trang web, cung cấp đầy đủ thông tin về dashboard, phân quyền CTV và kết nối Telegram Bot!";
-                } else if (lower.includes('tỷ giá') || lower.includes('chuyển tiền')) {
-                    reply = "Tỷ giá chuyển tiền Việt - Đài hôm nay cực kỳ ưu đãi, hỗ trợ chuyển khoản qua tài khoản BVBank nhận ngay trong phút.";
-                }
-                themTinNhan('bot', reply);
-            }, 600);
+        function guiTinNhanNhanh(text) {
+            const input = document.getElementById('chat-input');
+            input.value = text;
+            xuLyTinNhanNguoiDung();
         }
 
         function xuLyTinNhanNguoiDung() {
             const input = document.getElementById('chat-input');
-            const text = input.value.trim();
-            if (!text) return;
-            themTinNhan('user', text);
+            const msg = input.value.trim();
+            if(!msg) return;
+
+            const messages = document.getElementById('chat-messages');
+            messages.innerHTML += `
+                <div class="flex justify-end space-x-2">
+                    <div class="bg-gold-500 text-black p-3 rounded-2xl rounded-tr-none max-w-[80%] font-medium leading-relaxed">${msg}</div>
+                </div>
+            `;
             input.value = '';
-            phanHoiBot(text);
-        }
+            messages.scrollTop = messages.scrollHeight;
 
-        function guiTinNhanNhanh(text) {
-            themTinNhan('user', text);
-            phanHoiBot(text);
+            setTimeout(() => {
+                let reply = "Cảm ơn bạn đã liên hệ. Bạn vui lòng nhắn trực tiếp qua Zalo 034.6984.269 hoặc đăng nhập vào trang quản trị để được hỗ trợ nhanh nhất nhé!";
+                if(msg.toLowerCase().includes('đài loan')) {
+                    reply = "Tuyến Đài Loan khởi hành chuyến bay hàng ngày, cước phí siêu tiết kiệm và hỗ trợ giao tận nhà!";
+                } else if(msg.toLowerCase().includes('quản trị')) {
+                    reply = "Bạn có thể bấm vào nút 'Đăng Nhập Quản Trị' trên thanh menu hoặc đường dẫn trang quản trị admin để truy cập.";
+                } else if(msg.toLowerCase().includes('tỷ giá')) {
+                    reply = "Tỷ giá chuyển tiền Việt - Đài hôm nay cực tốt qua cổng BVBank, cập nhật theo thời gian thực.";
+                }
+                messages.innerHTML += `
+                    <div class="flex items-start space-x-2">
+                        <div class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0 text-xs">AI</div>
+                        <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">${reply}</div>
+                    </div>
+                `;
+                messages.scrollTop = messages.scrollHeight;
+            }, 800);
         }
-
-        document.getElementById('chat-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') xuLyTinNhanNguoiDung();
-        });
     </script>
 </body>
 </html>
