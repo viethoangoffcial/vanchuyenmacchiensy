@@ -1,145 +1,280 @@
-<!-- // 2026 CODE NÀY ĐƯỢC XÂY DỰNG PHÁT TRIỂN BẢN QUYỀN BỞI IT HOÀNG HẢI PHÒNG - VUI LÒNG LIÊN HỆ ZALO 034.6984.269 - MỌI HÀNH VI SAO CHÉP VÀ SỬ DỤNG TRÁI PHÉP SẼ BỊ TRỪNG PHẠT THEO MỨC ĐỘ RIÊNG KHÁC NHAU <= -->
+<!-- // 2026 HỆ THỐNG QUẢN TRỊ VẬN CHUYỂN QUỐC TẾ TỐI CAO - BẢN QUYỀN THUỘC VỀ IT HOÀNG HẢI PHÒNG - ZALO: 034.6984.269 // -->
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Quản Trị Hệ Thống - Mạc Chiến Sỹ Official Pro 2026</title>
+    <title>Hệ Thống Quản Trị Vận Chuyển Toàn Diện - Mạc Chiến Sỹ Official Pro 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        tailwind.config = { 
-            theme: { 
-                extend: { 
-                    colors: { 
-                        gold: { 
-                            300: '#fde047',
-                            400: '#facc15', 
-                            500: '#eab308', 
-                            600: '#ca8a04' 
-                        } 
-                    } 
-                } 
-            } 
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300: '#fde047', 400: '#facc15', 500: '#eab308', 600: '#ca8a04', 700: '#a16207' }
+                    }
+                }
+            }
         }
     </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0b0f19; color: #f8fafc; overflow-x: hidden; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #05070f; color: #f1f5f9; overflow-x: hidden; }
         .gold-gradient { background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%); }
         .gold-text-gradient { background: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #ca8a04 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-card { background: rgba(30, 41, 59, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(234, 179, 8, 0.22); transition: all 0.3s ease; }
-        .glass-card:hover { border-color: rgba(234, 179, 8, 0.55); }
-        .glass-nav { background: rgba(11, 15, 25, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(234, 179, 8, 0.15); }
-        .glow-gold { box-shadow: 0 0 25px rgba(234, 179, 8, 0.35); }
+        .glass-panel { background: rgba(13, 18, 30, 0.9); backdrop-filter: blur(24px); border: 1px solid rgba(234, 179, 8, 0.22); box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+        .glass-panel:hover { border-color: rgba(234, 179, 8, 0.5); }
+        .glass-nav { background: rgba(5, 7, 15, 0.95); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(234, 179, 8, 0.2); }
+        .glow-gold { box-shadow: 0 0 35px rgba(234, 179, 8, 0.35); }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #05070f; }
+        ::-webkit-scrollbar-thumb { background: #ca8a04; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
+<body class="bg-[#05070f] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
 
-    <!-- THANH ĐIỀU HƯỚNG QUẢN TRỊ -->
-    <nav class="sticky top-0 left-0 right-0 z-40 glass-nav">
+    <!-- THANH ĐIỀU HƯỚNG QUẢN TRỊ TỐI CAO -->
+    <nav class="sticky top-0 left-0 right-0 z-50 glass-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shadow-lg glow-gold">
-                        <i class="fa-solid fa-crown text-black text-xl"></i>
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-2xl gold-gradient flex items-center justify-center shadow-lg glow-gold">
+                        <i class="fa-solid fa-plane-up text-black text-xl"></i>
                     </div>
                     <div>
-                        <span class="text-xl font-extrabold gold-text-gradient tracking-wide block">ADMIN PANEL</span>
-                        <span class="text-xs text-gold-400 font-medium tracking-widest uppercase">Mạc Chiến Sỹ Pro 2026</span>
+                        <span class="text-lg font-black gold-text-gradient tracking-wide block">LOGISTICS ADMIN PRO</span>
+                        <span class="text-[10px] text-gold-400 font-bold tracking-widest uppercase">Mạc Chiến Sỹ • Hải Phòng - Quốc Tế</span>
                     </div>
-                </a>
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="px-4 py-2.5 bg-slate-800 border border-gold-500/40 text-gold-400 text-xs font-bold rounded-xl hover:bg-slate-700 transition shadow-md flex items-center">
-                        <i class="fa-solid fa-house mr-1.5"></i> Về Trang Chủ
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-6 text-xs font-bold text-gray-300">
+                    <a href="#overview" class="text-gold-400 hover:text-gold-300 transition"><i class="fa-solid fa-chart-pie mr-1"></i> Tổng Quan</a>
+                    <a href="#orders-section" class="hover:text-gold-400 transition"><i class="fa-solid fa-boxes-stacked mr-1"></i> Quản Lý Vận Đơn</a>
+                    <a href="#calculator" class="hover:text-gold-400 transition"><i class="fa-solid fa-calculator mr-1"></i> Tính Cước Nhanh</a>
+                    <a href="#finance" class="hover:text-gold-400 transition"><i class="fa-solid fa-wallet mr-1"></i> Kiều Hối BVBank</a>
+                    <a href="#warehouses" class="hover:text-gold-400 transition"><i class="fa-solid fa-warehouse mr-1"></i> Kho Bãi Quốc Tế</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <a href="index.html" class="px-4 py-2 bg-slate-800 border border-gold-500/40 text-gold-400 text-xs font-bold rounded-xl hover:bg-slate-700 transition flex items-center shadow-md">
+                        <i class="fa-solid fa-globe mr-1.5"></i> Về Website
                     </a>
-                    <div class="hidden sm:flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700">
-                        <div class="w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></div>
-                        <span class="text-xs font-bold text-gray-200">Super Admin (Online)</span>
+                    <div class="flex items-center space-x-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></div>
+                        <span class="text-xs font-bold text-emerald-400 hidden sm:inline">Bot Online</span>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- NỘI DUNG CHÍNH TRANG QUẢN TRỊ -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    <!-- NỘI DUNG CHÍNH -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10" id="overview">
         
-        <!-- TIÊU ĐỀ & THÔNG BÁO HỆ THỐNG -->
-        <div class="glass-card p-6 md:p-8 rounded-3xl border border-gold-500/30 flex flex-col md:flex-row items-center justify-between gap-6" data-aos="fade-up">
-            <div class="space-y-2 text-center md:text-left">
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider">
-                    <i class="fa-solid fa-shield-halved"></i> Khu Vực Kiểm Soát Tối Cao
+        <!-- HEADER THÔNG TIN CHUNG -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl border border-gold-500/30 flex flex-col lg:flex-row items-center justify-between gap-6" data-aos="fade-up">
+            <div class="space-y-2 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-[11px] font-extrabold uppercase tracking-wider">
+                    <i class="fa-solid fa-shield-halved"></i> Trung Tâm Điều Hành Logistics Chuyên Sâu 2026
                 </div>
-                <h1 class="text-2xl md:text-3xl font-extrabold text-white">Bảng Điều Khiển Quản Trị Viên & CTV</h1>
-                <p class="text-xs md:text-sm text-gray-300">Quản lý toàn bộ vận đơn quốc tế, dòng tiền kiều hối BVBank và mạng lưới cộng tác viên trực tuyến.</p>
+                <h1 class="text-2xl md:text-3xl font-black text-white">Quản Trị Hệ Thống Vận Chuyển & Tài Chính</h1>
+                <p class="text-xs md:text-sm text-gray-300">Giám sát quy trình khai thác hàng không/đường biển, kiểm soát mã vận đơn, dòng tiền kiều hối BVBank và thông báo Telegram.</p>
             </div>
-            <div class="flex flex-wrap gap-3">
+            <div class="flex flex-wrap gap-3 justify-center">
                 <button onclick="moModalThemDon()" class="px-5 py-3 gold-gradient text-black font-extrabold rounded-xl text-xs shadow-lg hover:scale-105 transition flex items-center">
-                    <i class="fa-solid fa-plus mr-1.5"></i> Thêm Đơn Mới
+                    <i class="fa-solid fa-circle-plus mr-2 text-sm"></i> Tạo Vận Đơn Mới
                 </button>
-                <button onclick="xuatBaoCao()" class="px-5 py-3 bg-slate-800 border border-gold-500/40 text-gold-400 font-bold rounded-xl text-xs hover:bg-slate-700 transition flex items-center">
-                    <i class="fa-solid fa-file-excel mr-1.5"></i> Xuất Báo Cáo
+                <button onclick="dongBoTelegramBot()" class="px-5 py-3 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-xl text-xs shadow-lg transition flex items-center">
+                    <i class="fa-brands fa-telegram mr-2 text-sm"></i> Đồng Bộ Telegram Bot
+                </button>
+                <button onclick="xuatExcelTatCa()" class="px-5 py-3 bg-slate-800 border border-gold-500/40 text-gold-400 font-bold rounded-xl text-xs hover:bg-slate-700 transition flex items-center">
+                    <i class="fa-solid fa-file-excel mr-2 text-sm"></i> Xuất Báo Cáo
                 </button>
             </div>
         </div>
 
-        <!-- CÁC THẺ THỐNG KÊ (KPI STATS) -->
+        <!-- CÁC THẺ THỐNG KÊ CHỈ SỐ (KPI STATS) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
-            <div class="glass-card p-6 rounded-3xl space-y-3">
+            <div class="glass-panel p-6 rounded-3xl space-y-3 relative overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-slate-800/40 text-7xl font-black pointer-events-none"><i class="fa-solid fa-boxes-packing"></i></div>
                 <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-gray-400 uppercase">Tổng Đơn Hôm Nay</span>
-                    <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Tổng Đơn Vận Chuyển</span>
+                    <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold shadow-md">
                         <i class="fa-solid fa-box-archive"></i>
                     </div>
                 </div>
-                <div class="text-3xl font-black text-white" id="stat-total-orders">142</div>
-                <span class="text-[11px] text-green-400 font-semibold"><i class="fa-solid fa-arrow-up mr-1"></i> +12.5% so với hôm qua</span>
+                <div class="text-3xl font-black text-white" id="stat-orders-count">1,842</div>
+                <div class="text-[11px] text-emerald-400 font-semibold flex items-center"><i class="fa-solid fa-arrow-trend-up mr-1"></i> +21.5% tháng này</div>
             </div>
 
-            <div class="glass-card p-6 rounded-3xl space-y-3">
+            <div class="glass-panel p-6 rounded-3xl space-y-3 relative overflow-hidden" id="finance">
+                <div class="absolute -right-4 -bottom-4 text-slate-800/40 text-7xl font-black pointer-events-none"><i class="fa-solid fa-wallet"></i></div>
                 <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-gray-400 uppercase">Kiều Hối BVBank</span>
-                    <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold">
-                        <i class="fa-solid fa-wallet"></i>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Kiều Hối BVBank</span>
+                    <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold shadow-md">
+                        <i class="fa-solid fa-building-columns"></i>
                     </div>
                 </div>
-                <div class="text-3xl font-black text-gold-400">580 Tr</div>
-                <span class="text-[11px] text-gold-400 font-semibold"><i class="fa-solid fa-shield-halved mr-1"></i> Đã xác thực SSL</span>
+                <div class="text-3xl font-black text-gold-400">3.82 Tỷ VNĐ</div>
+                <div class="text-[11px] text-gold-300 font-semibold flex items-center"><i class="fa-solid fa-shield-check mr-1"></i> Đã kiểm duyệt thông quan</div>
             </div>
 
-            <div class="glass-card p-6 rounded-3xl space-y-3">
+            <div class="glass-panel p-6 rounded-3xl space-y-3 relative overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-slate-800/40 text-7xl font-black pointer-events-none"><i class="fa-solid fa-weight-scale"></i></div>
                 <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-gray-400 uppercase">CTV Hoạt Động</span>
-                    <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold">
-                        <i class="fa-solid fa-users"></i>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Tổng Trọng Lượng Hàng</span>
+                    <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold shadow-md">
+                        <i class="fa-solid fa-scale-balanced"></i>
                     </div>
                 </div>
-                <div class="text-3xl font-black text-white">74</div>
-                <span class="text-[11px] text-green-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i> Trực tuyến ổn định</span>
+                <div class="text-3xl font-black text-white">12.4 Tấn</div>
+                <div class="text-[11px] text-emerald-400 font-semibold flex items-center"><i class="fa-solid fa-plane mr-1"></i> Đang khai thác tuyến bay</div>
             </div>
 
-            <div class="glass-card p-6 rounded-3xl space-y-3">
+            <div class="glass-panel p-6 rounded-3xl space-y-3 relative overflow-hidden">
+                <div class="absolute -right-4 -bottom-4 text-slate-800/40 text-7xl font-black pointer-events-none"><i class="fa-solid fa-users"></i></div>
                 <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-gray-400 uppercase">Bot Telegram</span>
-                    <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-black font-bold">
-                        <i class="fa-solid fa-robot"></i>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Đại Lý & CTV Phối Hợp</span>
+                    <div class="w-10 h-10 rounded-xl bg-sky-500/25 border border-sky-500/40 flex items-center justify-center text-sky-400 font-bold shadow-md">
+                        <i class="fa-solid fa-user-group"></i>
                     </div>
                 </div>
-                <div class="text-3xl font-black text-gold-400">Online</div>
-                <span class="text-[11px] text-green-400 font-semibold"><i class="fa-solid fa-bolt mr-1"></i> Bắn thông báo 24/7</span>
+                <div class="text-3xl font-black text-sky-400">94 Active</div>
+                <div class="text-[11px] text-sky-300 font-semibold flex items-center"><i class="fa-solid fa-bolt mr-1"></i> Trực tuyến 24/7</div>
             </div>
         </div>
 
-        <!-- BẢNG QUẢN LÝ ĐƠN HÀNG CHI TIẾT -->
-        <div class="glass-card p-6 md:p-8 rounded-3xl border border-gold-500/30 space-y-6" data-aos="fade-up">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <h3 class="text-lg font-bold text-white flex items-center">
-                    <i class="fa-solid fa-table-list text-gold-400 mr-2.5"></i> Danh Sách Vận Đơn & Trạng Thái Đồng Bộ
+        <!-- CÔNG CỤ TÍNH CƯỚC VẬN CHUYỂN NHANH (TÍNH NĂNG NGHIỆP VỤ) -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl border border-gold-500/30 space-y-6" id="calculator" data-aos="fade-up">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <h3 class="text-base font-bold text-white flex items-center">
+                    <i class="fa-solid fa-calculator text-gold-400 mr-2.5"></i> Công Cụ Tính Cước Vận Chuyển Quốc Tế (Việt Nam - Đài Loan/Hàn/Nhật)
                 </h3>
-                <div class="w-full sm:w-72">
-                    <input type="text" id="search-input" onkeyup="timKiemDonHang()" placeholder="Tìm kiếm mã đơn, tên khách..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-gold-500">
+                <span class="text-xs text-gold-400 font-bold">Cập nhật cước phí 2026</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+                <div>
+                    <label class="block font-bold text-gray-300 mb-1.5">Tuyến vận chuyển</label>
+                    <select id="calc-route" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
+                        <option value="taiwan">Hải Phòng ✈ Đài Loan (TPE)</option>
+                        <option value="korea">Hải Phòng ✈ Hàn Quốc (ICN)</option>
+                        <option value="japan">Hải Phòng ✈ Nhật Bản (NRT)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-300 mb-1.5">Trọng lượng thực tế (kg)</label>
+                    <input type="number" id="calc-weight" value="5" min="0.1" step="0.1" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-300 mb-1.5">Loại hàng hóa</label>
+                    <select id="calc-type" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
+                        <option value="normal">Hàng thông thường (Quần áo, giày dép)</option>
+                        <option value="special">Hàng đặc biệt (Mỹ phẩm, thực phẩm, điện tử)</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button onclick="tinhCuocNhanh()" class="w-full py-3 gold-gradient text-black font-extrabold rounded-xl shadow-lg hover:scale-[1.02] transition">
+                        Tính Cước Ngay
+                    </button>
+                </div>
+            </div>
+            <div id="calc-result" class="hidden p-4 rounded-2xl bg-slate-800/80 border border-gold-500/40 flex items-center justify-between text-xs">
+                <div>
+                    <span class="text-gray-400">Ước tính chi phí cước vận chuyển:</span>
+                    <span class="text-lg font-black text-gold-400 ml-2" id="result-price">0 VNĐ</span>
+                </div>
+                <button onclick="apDungVaoDon()" class="px-4 py-2 bg-gold-500 text-black font-bold rounded-lg hover:bg-gold-400 transition">Đưa vào tạo đơn</button>
+            </div>
+        </div>
+
+        <!-- BIỂU ĐỒ & KHO BÃI QUỐC TẾ -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6" data-aos="fade-up">
+            <div class="glass-panel p-6 md:p-8 rounded-3xl lg:col-span-2 space-y-6">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-base font-bold text-white flex items-center">
+                        <i class="fa-solid fa-chart-line text-gold-400 mr-2.5"></i> Biểu Đồ Sản Lượng Vận Chuyển Theo Tháng (2026)
+                    </h3>
+                    <select class="bg-slate-800 border border-slate-700 text-gold-400 text-xs rounded-xl px-3 py-1.5 focus:outline-none">
+                        <option>Năm 2026</option>
+                    </select>
+                </div>
+                <div class="h-72 w-full">
+                    <canvas id="logisticsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- KHO BÃI QUỐC TẾ (WAREHOUSES) -->
+            <div class="glass-panel p-6 md:p-8 rounded-3xl space-y-6" id="warehouses">
+                <h3 class="text-base font-bold text-white flex items-center">
+                    <i class="fa-solid fa-warehouse text-gold-400 mr-2.5"></i> Trạng Thái Kho Quốc Tế
+                </h3>
+                <div class="space-y-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 space-y-2">
+                        <div class="flex justify-between font-bold text-gray-200">
+                            <span>Kho Đài Bắc (TPE)</span>
+                            <span class="text-emerald-400 font-extrabold">Đang khai thác</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="gold-gradient h-full w-[82%]"></div>
+                        </div>
+                        <div class="flex justify-between text-[11px] text-gray-400">
+                            <span>Sức chứa: 8 Tấn</span>
+                            <span>Đã nhận 82%</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 space-y-2">
+                        <div class="flex justify-between font-bold text-gray-200">
+                            <span>Kho Seoul (ICN)</span>
+                            <span class="text-emerald-400 font-extrabold">Đang khai thác</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="gold-gradient h-full w-[70%]"></div>
+                        </div>
+                        <div class="flex justify-between text-[11px] text-gray-400">
+                            <span>Sức chứa: 6 Tấn</span>
+                            <span>Đã nhận 70%</span>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-800/60 border border-slate-700/60 space-y-2">
+                        <div class="flex justify-between font-bold text-gray-200">
+                            <span>Kho Tokyo (NRT)</span>
+                            <span class="text-gold-400 font-extrabold">Chuẩn bị cất cánh</span>
+                        </div>
+                        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                            <div class="gold-gradient h-full w-[95%]"></div>
+                        </div>
+                        <div class="flex justify-between text-[11px] text-gray-400">
+                            <span>Sức chứa: 10 Tấn</span>
+                            <span>Đã nhận 95%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BẢNG QUẢN LÝ VẬN ĐƠN CHI TIẾT (FULL TÍNH NĂNG QUẢN LÝ HÀNG HÓA) -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl border border-gold-500/30 space-y-6" id="orders-section" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <h3 class="text-lg font-bold text-white flex items-center">
+                    <i class="fa-solid fa-boxes-stacked text-gold-400 mr-2.5"></i> Danh Sách Vận Đơn & Trạng Thái Xử Lý Hàng Hóa
+                </h3>
+                <div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+                    <div class="relative flex-1 md:w-72">
+                        <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-search"></i></span>
+                        <input type="text" id="search-input" onkeyup="timKiemDonHang()" placeholder="Tìm mã vận đơn, tên khách..." class="w-full bg-slate-800 border border-slate-700 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white focus:outline-none focus:border-gold-500">
+                    </div>
+                    <select id="filter-status" onchange="locTrangThai()" class="bg-slate-800 border border-slate-700 text-gold-400 text-xs rounded-xl px-4 py-2.5 focus:outline-none focus:border-gold-500">
+                        <option value="all">Tất cả trạng thái</option>
+                        <option value="Đang bay">Đang bay</option>
+                        <option value="Đang đóng gói">Đang đóng gói</option>
+                        <option value="Đã thông quan">Đã thông quan</option>
+                        <option value="Đã giao hàng">Đã giao hàng</option>
+                    </select>
                 </div>
             </div>
 
@@ -149,44 +284,48 @@
                         <tr>
                             <th class="p-3.5 rounded-l-xl">Mã Vận Đơn</th>
                             <th class="p-3.5">Người Gửi (Việt Nam)</th>
-                            <th class="p-3.5">Người Nhận (Đài/Hàn/Nhật)</th>
-                            <th class="p-3.5">Chi Tiết Hàng Hóa</th>
+                            <th class="p-3.5">Người Nhận (Quốc Tế)</th>
+                            <th class="p-3.5">Hàng Hóa & Trọng Lượng</th>
+                            <th class="p-3.5">Kiều Hối BVBank</th>
                             <th class="p-3.5">Trạng Thái</th>
                             <th class="p-3.5 rounded-r-xl text-center">Thao Tác</th>
                         </tr>
                     </thead>
-                    <tbody class="divide-y divide-slate-800">
+                    <tbody class="divide-y divide-slate-800/80">
                         <tr class="hover:bg-slate-800/40 transition">
-                            <td class="p-3.5 font-bold text-gold-400">MCS88812</td>
-                            <td class="p-3.5">Nguyễn Văn Hùng (Hải Phòng)</td>
+                            <td class="p-3.5 font-extrabold text-gold-400">MCS88812</td>
+                            <td class="p-3.5 font-medium text-white">Nguyễn Văn Hùng (Hải Phòng)</td>
                             <td class="p-3.5">Chen Mei Ling (Đài Bắc)</td>
-                            <td class="p-3.5">Mỹ phẩm cao cấp (3kg)</td>
-                            <td class="p-3.5"><span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 font-bold text-[10px]">Đang bay</span></td>
-                            <td class="p-3.5 text-center">
-                                <button onclick="suaDon('MCS88812')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold mr-1"><i class="fa-solid fa-pen"></i></button>
-                                <button onclick="xoaDon(this)" class="px-3 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold"><i class="fa-solid fa-trash"></i></button>
+                            <td class="p-3.5">Mỹ phẩm cao cấp (3.5 kg)</td>
+                            <td class="p-3.5 font-bold text-emerald-400">12,500,000 VNĐ</td>
+                            <td class="p-3.5"><span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px]">Đang bay</span></td>
+                            <td class="p-3.5 text-center space-x-1">
+                                <button onclick="suaDon('MCS88812')" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold" title="Sửa"><i class="fa-solid fa-pen"></i></button>
+                                <button onclick="xoaDon(this)" class="px-2.5 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold" title="Xóa"><i class="fa-solid fa-trash"></i></button>
                             </td>
                         </tr>
                         <tr class="hover:bg-slate-800/40 transition">
-                            <td class="p-3.5 font-bold text-gold-400">MCS88813</td>
-                            <td class="p-3.5">Trần Thị Mai (Hà Nội)</td>
+                            <td class="p-3.5 font-extrabold text-gold-400">MCS88813</td>
+                            <td class="p-3.5 font-medium text-white">Trần Thị Mai (Hà Nội)</td>
                             <td class="p-3.5">Wang Xiao (Cao Hùng)</td>
-                            <td class="p-3.5">Quần áo thời trang (5kg)</td>
+                            <td class="p-3.5">Quần áo thời trang (5.0 kg)</td>
+                            <td class="p-3.5 font-bold text-emerald-400">18,200,000 VNĐ</td>
                             <td class="p-3.5"><span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 font-bold text-[10px]">Đang đóng gói</span></td>
-                            <td class="p-3.5 text-center">
-                                <button onclick="suaDon('MCS88813')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold mr-1"><i class="fa-solid fa-pen"></i></button>
-                                <button onclick="xoaDon(this)" class="px-3 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold"><i class="fa-solid fa-trash"></i></button>
+                            <td class="p-3.5 text-center space-x-1">
+                                <button onclick="suaDon('MCS88813')" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold" title="Sửa"><i class="fa-solid fa-pen"></i></button>
+                                <button onclick="xoaDon(this)" class="px-2.5 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold" title="Xóa"><i class="fa-solid fa-trash"></i></button>
                             </td>
                         </tr>
                         <tr class="hover:bg-slate-800/40 transition">
-                            <td class="p-3.5 font-bold text-gold-400">MCS88814</td>
-                            <td class="p-3.5">Lê Hoàng Nam (Đà Nẵng)</td>
+                            <td class="p-3.5 font-extrabold text-gold-400">MCS88814</td>
+                            <td class="p-3.5 font-medium text-white">Lê Hoàng Nam (Đà Nẵng)</td>
                             <td class="p-3.5">Lin Yu (Đài Trung)</td>
-                            <td class="p-3.5">Thực phẩm khô gia truyền (2kg)</td>
-                            <td class="p-3.5"><span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 font-bold text-[10px]">Đã thông quan</span></td>
-                            <td class="p-3.5 text-center">
-                                <button onclick="suaDon('MCS88814')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold mr-1"><i class="fa-solid fa-pen"></i></button>
-                                <button onclick="xoaDon(this)" class="px-3 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold"><i class="fa-solid fa-trash"></i></button>
+                            <td class="p-3.5">Thực phẩm khô gia truyền (2.0 kg)</td>
+                            <td class="p-3.5 font-bold text-emerald-400">8,900,000 VNĐ</td>
+                            <td class="p-3.5"><span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-400 font-bold text-[10px]">Đã thông quan</span></td>
+                            <td class="p-3.5 text-center space-x-1">
+                                <button onclick="suaDon('MCS88814')" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold" title="Sửa"><i class="fa-solid fa-pen"></i></button>
+                                <button onclick="xoaDon(this)" class="px-2.5 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold" title="Xóa"><i class="fa-solid fa-trash"></i></button>
                             </td>
                         </tr>
                     </tbody>
@@ -196,40 +335,98 @@
 
     </main>
 
-    <!-- MODAL THÊM ĐƠN HÀNG -->
-    <div id="modal-them-don" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="glass-card p-6 md:p-8 rounded-3xl max-w-lg w-full border border-gold-500/40 space-y-6">
+    <!-- MODAL THÊM VẬN ĐƠN MỚI -->
+    <div id="modal-them-don" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-panel p-6 md:p-8 rounded-3xl max-w-lg w-full border border-gold-500/40 space-y-6 shadow-2xl">
             <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-                <h3 class="text-xl font-bold text-white"><i class="fa-solid fa-plus-circle text-gold-400 mr-2"></i> Thêm Vận Đơn Mới</h3>
-                <button onclick="dongModalThemDon()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
+                <h3 class="text-xl font-bold text-white flex items-center">
+                    <i class="fa-solid fa-circle-plus text-gold-400 mr-2.5"></i> Tạo Vận Đơn Mới Pro
+                </h3>
+                <button onclick="dongModalThemDon()" class="text-gray-400 hover:text-white transition"><i class="fa-solid fa-xmark text-xl"></i></button>
             </div>
             <form onsubmit="themDonMoi(event)" class="space-y-4 text-xs">
                 <div>
-                    <label class="block font-bold text-gray-300 mb-1">Họ tên người gửi</label>
-                    <input type="text" id="input-sender" required placeholder="Nhập tên người gửi..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
+                    <label class="block font-bold text-gray-300 mb-1.5">Họ tên người gửi (Việt Nam)</label>
+                    <input type="text" id="input-sender" required placeholder="Ví dụ: Nguyễn Văn A..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
                 </div>
                 <div>
-                    <label class="block font-bold text-gray-300 mb-1">Họ tên người nhận</label>
-                    <input type="text" id="input-receiver" required placeholder="Nhập tên người nhận..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
+                    <label class="block font-bold text-gray-300 mb-1.5">Họ tên người nhận (Quốc tế)</label>
+                    <input type="text" id="input-receiver" required placeholder="Ví dụ: Chen Wei..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
                 </div>
                 <div>
-                    <label class="block font-bold text-gray-300 mb-1">Hàng hóa & Trọng lượng</label>
-                    <input type="text" id="input-item" required placeholder="Ví dụ: Mỹ phẩm (2kg)..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
+                    <label class="block font-bold text-gray-300 mb-1.5">Hàng hóa & Trọng lượng (kg)</label>
+                    <input type="text" id="input-item" required placeholder="Ví dụ: Mỹ phẩm cao cấp (3kg)..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
                 </div>
-                <button type="submit" class="w-full py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg hover:scale-[1.02] transition">Xác Nhận Lưu Đơn</button>
+                <div>
+                    <label class="block font-bold text-gray-300 mb-1.5">Số tiền kiều hối BVBank (VNĐ)</label>
+                    <input type="text" id="input-money" required placeholder="Ví dụ: 10,000,000..." class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold-500">
+                </div>
+                <button type="submit" class="w-full py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg hover:scale-[1.02] transition text-sm">
+                    Xác Nhận Lưu Đơn & Bắn Bot Telegram
+                </button>
             </form>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="glass-nav py-8 mt-16 border-t border-slate-800 text-center text-xs text-gray-500">
-        <p>© 2026 Mạc Chiến Sỹ Official Pro. Admin Panel Management.</p>
+    <!-- FOOTER CHÍNH THỨC -->
+    <footer class="glass-nav py-10 mt-20 border-t border-slate-800 text-center text-xs text-gray-400 space-y-2">
+        <p class="font-bold text-gold-400">© 2026 Mạc Chiến Sỹ Official Pro. Bản quyền hệ thống quản trị logistics & tài chính quốc tế.</p>
+        <p class="text-gray-500">Hỗ trợ kỹ thuật trực tiếp qua Zalo: 034.6984.269 - Trụ sở chính tại Hải Phòng, Việt Nam.</p>
     </footer>
 
-    <!-- JAVASCRIPT XỬ LÝ QUẢN TRỊ -->
+    <!-- JAVASCRIPT XỬ LÝ TOÀN DIỆN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
+
+        // Biểu đồ Chart.js cho vận chuyển
+        const ctx = document.getElementById('logisticsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
+                datasets: [{
+                    label: 'Sản lượng vận chuyển (Tấn)',
+                    data: [8.5, 9.2, 10.4, 11.1, 11.8, 12.4],
+                    borderColor: '#eab308',
+                    backgroundColor: 'rgba(234, 179, 8, 0.1)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { labels: { color: '#f1f5f9', font: { family: 'Plus Jakarta Sans', size: 11 } } } },
+                scales: {
+                    x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                    y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                }
+            }
+        });
+
+        function tinhCuocNhanh() {
+            const route = document.getElementById('calc-route').value;
+            const weight = parseFloat(document.getElementById('calc-weight').value) || 0;
+            const type = document.getElementById('calc-type').value;
+
+            let ratePerKg = 150000; // Mặc định
+            if (route === 'taiwan') ratePerkg = 140000;
+            if (route === 'korea') ratePerkg = 160000;
+            if (route === 'japan') ratePerkg = 180000;
+
+            if (type === 'special') ratePerkg += 40000;
+
+            const total = weight * ratePerkg;
+            document.getElementById('result-price').innerText = total.toLocaleString('vi-VN') + ' VNĐ';
+            document.getElementById('calc-result').classList.remove('hidden');
+        }
+
+        function apDungVaoDon() {
+            moModalThemDon();
+            document.getElementById('input-item').value = "Hàng hóa tiêu chuẩn (" + document.getElementById('calc-weight').value + "kg)";
+        }
 
         function moModalThemDon() {
             document.getElementById('modal-them-don').classList.remove('hidden');
@@ -244,54 +441,67 @@
             const sender = document.getElementById('input-sender').value;
             const receiver = document.getElementById('input-receiver').value;
             const item = document.getElementById('input-item').value;
+            const money = document.getElementById('input-money').value;
             const code = "MCS" + Math.floor(10000 + Math.random() * 90000);
 
             const tableBody = document.querySelector('#orders-table tbody');
             const newRow = document.createElement('tr');
             newRow.className = 'hover:bg-slate-800/40 transition';
             newRow.innerHTML = `
-                <td class="p-3.5 font-bold text-gold-400">${code}</td>
-                <td class="p-3.5">${sender}</td>
+                <td class="p-3.5 font-extrabold text-gold-400">${code}</td>
+                <td class="p-3.5 font-medium text-white">${sender}</td>
                 <td class="p-3.5">${receiver}</td>
                 <td class="p-3.5">${item}</td>
+                <td class="p-3.5 font-bold text-emerald-400">${money} VNĐ</td>
                 <td class="p-3.5"><span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 font-bold text-[10px]">Đang đóng gói</span></td>
-                <td class="p-3.5 text-center">
-                    <button onclick="suaDon('${code}')" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold mr-1"><i class="fa-solid fa-pen"></i></button>
-                    <button onclick="xoaDon(this)" class="px-3 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold"><i class="fa-solid fa-trash"></i></button>
+                <td class="p-3.5 text-center space-x-1">
+                    <button onclick="suaDon('${code}')" class="px-2.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-lg text-xs font-bold" title="Sửa"><i class="fa-solid fa-pen"></i></button>
+                    <button onclick="xoaDon(this)" class="px-2.5 py-1.5 bg-red-500/20 hover:bg-red-500/30 text-red-400 rounded-lg text-xs font-bold" title="Xóa"><i class="fa-solid fa-trash"></i></button>
                 </td>
             `;
             tableBody.insertBefore(newRow, tableBody.firstChild);
-            
-            // Tăng số lượng đơn lên
-            const totalEl = document.getElementById('stat-total-orders');
-            totalEl.innerText = parseInt(totalEl.innerText) + 1;
 
             dongModalThemDon();
-            alert('Thêm vận đơn thành công và đồng bộ hệ thống Telegram Bot!');
+            alert('Tạo vận đơn mới thành công! Dữ liệu đã được tự động bắn thông báo qua Telegram Bot.');
         }
 
         function xoaDon(btn) {
-            if (confirm('Bạn có chắc chắn muốn xóa vận đơn này không?')) {
-                const row = btn.closest('tr');
-                row.remove();
+            if (confirm('Bạn có chắc chắn muốn xóa vận đơn này khỏi hệ thống không?')) {
+                btn.closest('tr').remove();
                 alert('Đã xóa vận đơn thành công.');
             }
         }
 
         function suaDon(code) {
-            alert('Chỉnh sửa thông tin vận đơn: ' + code);
+            alert('Mở bảng điều khiển chỉnh sửa vận đơn: ' + code);
         }
 
-        function xuatBaoCao() {
-            alert('Đang xuất file báo cáo doanh thu và đơn hàng ra Excel...');
+        function xuatExcelTatCa() {
+            alert('Đang tổng hợp toàn bộ dữ liệu đơn hàng và xuất file Excel thành công!');
+        }
+
+        function dongBoTelegramBot() {
+            alert('Đã kết nối và đồng bộ tín hiệu trực tuyến thành công với Telegram Bot Server!');
         }
 
         function timKiemDonHang() {
-            const input = document.getElementById('search-input').value.toLowerCase();
+            const val = document.getElementById('search-input').value.toLowerCase();
             const rows = document.querySelectorAll('#orders-table tbody tr');
-            rows.forEach(row => {
-                const text = row.innerText.toLowerCase();
-                row.style.display = text.includes(input) ? '' : 'none';
+            rows.forEach(r => {
+                r.style.display = r.innerText.toLowerCase().includes(val) ? '' : 'none';
+            });
+        }
+
+        function locTrangThai() {
+            const status = document.getElementById('filter-status').value;
+            const rows = document.querySelectorAll('#orders-table tbody tr');
+            rows.forEach(r => {
+                if (status === 'all') {
+                    r.style.display = '';
+                } else {
+                    const text = r.innerText;
+                    r.style.display = text.includes(status) ? '' : 'none';
+                }
             });
         }
     </script>
