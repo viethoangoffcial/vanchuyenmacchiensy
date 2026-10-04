@@ -47,7 +47,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* KHUNG VIDEO YOUTUBE LÀM NỀN TOÀN TRANG */
+        /* KHUNG VIDEO YOUTUBE LÀM NỀN TOÀN TRANG SẮC NÉT */
         .youtube-background {
             position: fixed;
             top: 0;
@@ -58,15 +58,17 @@
             overflow: hidden;
             pointer-events: none;
         }
-        .youtube-background iframe {
+        /* Phóng to và căn chỉnh để video luôn lấp đầy màn hình với độ phân giải cao nhất */
+        .youtube-background iframe, .youtube-background #player {
             position: absolute;
             top: 50%;
-            left: 60%;
+            left: 50%;
             width: 100vw;
-            height: 56.25vw; /* Tỷ lệ 16:9 */
-            min-height: 100vh;
-            min-width: 177.77vh;
+            height: 56.25vw; /* Tỷ lệ chuẩn 16:9 */
+            min-height: 150vh;
+            min-width: 266.66vh; /* Ép kích thước siêu lớn để YouTube tự động xuất độ nét cao HD */
             transform: translate(-50%, -50%);
+            pointer-events: none;
         }
         .youtube-overlay {
             position: fixed;
@@ -74,7 +76,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(11, 15, 25, 0.82); /* Lớp phủ tối màu để tương thích giao diện Dark Mode */
+            background: rgba(11, 15, 25, 0.82); /* Lớp phủ tối màu cân bằng độ tương phản */
             z-index: -98;
             pointer-events: none;
         }
@@ -1079,10 +1081,12 @@
                 'fs': 0,
                 'iv_load_policy': 3,
                 'rel': 0,
-                'start': 143 // Bắt đầu từ giây 143 như ý bạn
+                'start': 143, // Bắt đầu từ giây 143 như ý bạn
+                'vq': 'hd1080' // Buộc YouTube tải luồng video chất lượng cao HD 1080p sắc nét
             },
             events: {
                 'onReady': function(event) {
+                    event.target.setPlaybackQuality('hd1080'); // Kích hoạt chất lượng cao nhất khi player sẵn sàng
                     event.target.playVideo();
                 }
             }
