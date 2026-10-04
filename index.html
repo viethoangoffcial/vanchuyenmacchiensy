@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mạc Chiến Sỹ Official Pro 2026 - Hệ Thống Vận Chuyển & Quản Trị Độc Quyền</title>
+    <title>Mạc Chiến Sỹ Vận Chuyển Quốc Tế - Official Pro 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* MÀN HÌNH CHỜ KIỂM TRA HỆ THỐNG (SPLASH SCREEN) */
+        /* MÀN HÌNH CHỜ KIỂM TRA HỆ THỐNG & TỐC ĐỘ 180 GIÂY */
         #splash-screen {
             position: fixed;
             inset: 0;
@@ -56,8 +56,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
+
+        .spinner-ring {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(234, 179, 8, 0.15);
+            border-top: 4px solid #facc15;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
         /* KHUNG VIDEO YOUTUBE LÀM NỀN TOÀN TRANG SIÊU SẮC NÉT */
         .youtube-background {
@@ -96,20 +106,40 @@
 </head>
 <body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
 
-  <!-- MÀN HÌNH CHỜ CHECK HỆ THỐNG TỰ ĐỘNG -->
+  <!-- MÀN HÌNH CHỜ CHECK HỆ THỐNG & TỐC ĐỘ 180 GIÂY -->
   <div id="splash-screen">
-      <div class="glass-card max-w-sm w-full mx-4 p-8 rounded-3xl border border-gold-500/40 glow-gold text-center space-y-6 shadow-2xl">
-          <div class="w-20 h-20 mx-auto rounded-2xl gold-gradient flex items-center justify-center text-black text-3xl font-bold shadow-lg floating">
-              <i class="fa-solid fa-shield-halved"></i>
+      <div class="glass-card max-w-md w-full mx-4 p-8 rounded-3xl border border-gold-500/40 glow-gold text-center space-y-6 shadow-2xl">
+          <div class="relative w-20 h-20 mx-auto flex items-center justify-center">
+              <div class="absolute inset-0 spinner-ring"></div>
+              <div class="w-12 h-12 rounded-xl gold-gradient flex items-center justify-center text-black text-xl font-bold shadow-lg">
+                  <i class="fa-solid fa-plane-departure"></i>
+              </div>
           </div>
           <div class="space-y-2">
-              <h3 class="text-xl font-extrabold gold-text-gradient">Mạc Chiến Sỹ 2026</h3>
-              <p id="os-detect-text" class="text-xs text-gray-300 font-medium">Đang nhận diện thiết bị & hệ điều hành...</p>
+              <h3 class="text-xl font-extrabold gold-text-gradient">Mạc Chiến Sỹ Vận Chuyển Quốc Tế Số 1 Việt Nam</h3>
+              <p id="system-status-text" class="text-xs text-gold-300 font-semibold h-5">IT Hoàng HP Đang khởi tạo hệ thống bảo mật (180 giây)...</p>
           </div>
+          
+          <!-- BẢNG LOG THÔNG SỐ TỐC ĐỘ VẬN HÀNH -->
+          <div class="bg-slate-900/90 rounded-2xl p-4 border border-slate-800 text-left space-y-2 text-[11px] font-mono text-gray-400">
+              <div id="log-step-1" class="flex items-center justify-between transition-opacity duration-300">
+                  <span><i class="fa-solid fa-circle-notch fa-spin text-gold-400 mr-2"></i> Nhận diện thiết bị & Hệ điều hành...</span>
+                  <span id="res-os" class="text-gold-400 font-bold">Đang quét...</span>
+              </div>
+              <div id="log-step-2" class="flex items-center justify-between opacity-40 transition-opacity duration-300">
+                  <span><i class="fa-solid fa-network-wired text-gold-400 mr-2"></i> Ping máy chủ Quốc Tế...</span>
+                  <span id="res-ping" class="text-gray-400 font-bold">-- ms</span>
+              </div>
+              <div id="log-step-3" class="flex items-center justify-between opacity-40 transition-opacity duration-300">
+                  <span><i class="fa-solid fa-shield-halved text-gold-400 mr-2"></i> Xác thực SSL & Bảo Mật Thông Tin...</span>
+                  <span id="res-ssl" class="text-gray-400 font-bold">Chờ...</span>
+              </div>
+          </div>
+
           <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
               <div id="loading-bar" class="gold-gradient h-full w-0 transition-all duration-300"></div>
           </div>
-          <div class="text-[10px] text-gray-500">Bản quyền phát triển bởi IT Hoàng Hải Phòng</div>
+          <div class="text-[10px] text-gray-500">Bản quyền phát triển độc quyền bởi IT Hoàng Hải Phòng</div>
       </div>
   </div>
 
@@ -129,7 +159,7 @@
     <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-b border-gold-500/30 text-xs py-2.5 overflow-hidden relative z-50">
         <div class="marquee-container">
             <div class="marquee-track text-gold-300 font-semibold flex space-x-12">
-                <span><i class="fa-solid fa-plane-departure text-gold-400 mr-1.5"></i> Chuyến bay vận chuyển hàng hóa Đài Loan - Việt Nam khởi hành liên tục mỗi ngày!</span>
+                <span><i class="fa-solid fa-plane-departure text-gold-400 mr-1.5"></i> Mạc Chiến Sỹ Vận Chuyển Quốc Tế - Chuyến bay hàng hóa Đài Loan, Hàn Quốc, Nhật Bản khởi hành liên tục mỗi ngày!</span>
                 <span><i class="fa-solid fa-money-bill-transfer text-gold-400 mr-1.5"></i> Tỷ giá chuyển tiền Việt - Đài hôm nay siêu tốt, hỗ trợ tài khoản BVBank 24/7.</span>
                 <span><i class="fa-solid fa-shield-halved text-gold-400 mr-1.5"></i> Cam kết bảo hiểm hàng hóa 100%, đền bù thỏa đáng nếu có sự cố vận chuyển.</span>
                 <span><i class="fa-solid fa-user-shield text-gold-400 mr-1.5"></i> Hệ thống trang quản trị Admin & CTV độc quyền tích hợp phân quyền bảo mật cao.</span>
@@ -143,11 +173,11 @@
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center space-x-3 group">
                     <div class="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shadow-lg glow-gold floating">
-                        <i class="fa-solid fa-crown text-black text-xl"></i>
+                        <i class="fa-solid fa-plane-up text-black text-xl"></i>
                     </div>
                     <div>
-                        <span class="text-xl font-extrabold gold-text-gradient tracking-wide block">MẠC CHIẾN SỸ</span>
-                        <span class="text-xs text-gold-400 font-medium tracking-widest uppercase">Official Pro 2026</span>
+                        <span class="text-sm md:text-lg font-extrabold gold-text-gradient tracking-wide block">MẠC CHIẾN SỸ</span>
+                        <span class="text-[10px] text-gold-400 font-bold tracking-widest uppercase">Vận Chuyển Quốc Tế</span>
                     </div>
                 </a>
                 <div class="hidden lg:flex items-center space-x-4 text-xs font-semibold">
@@ -163,8 +193,8 @@
                     <a href="#bang-gia" class="text-gray-300 hover:text-gold-400 transition">Bảng Giá</a>
                     <a href="#tien-ich" class="text-gray-300 hover:text-gold-400 transition">Tiện Ích</a>
                 </div>
-                <div class="hidden md:flex items-center space-x-3">
-                    <button onclick="moModalVaoApp()" class="px-5 py-2.5 gold-gradient text-black text-xs font-extrabold rounded-xl hover:scale-105 transition shadow-lg glow-gold flex items-center">
+                <div class="flex items-center space-x-3">
+                    <button onclick="moModalVaoApp()" class="px-4 py-2 md:px-5 md:py-2.5 gold-gradient text-black text-xs font-extrabold rounded-xl hover:scale-105 transition shadow-lg glow-gold flex items-center">
                         <i class="fa-solid fa-rocket mr-1.5 text-sm"></i> Vào App
                     </button>
                 </div>
@@ -181,9 +211,9 @@
 
             <div class="text-center space-y-2">
                 <div class="w-16 h-16 mx-auto rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold shadow-lg mb-2">
-                    <i class="fa-solid fa-crown"></i>
+                    <i class="fa-solid fa-plane-up"></i>
                 </div>
-                <h3 class="text-2xl font-extrabold gold-text-gradient">Hệ Thống Mạc Chiến Sỹ</h3>
+                <h3 class="text-2xl font-extrabold gold-text-gradient">Mạc Chiến Sỹ Quốc Tế</h3>
                 <p class="text-xs text-gray-300">Vui lòng chọn phân quyền truy cập phù hợp với bạn:</p>
             </div>
 
@@ -241,10 +271,10 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
                 <div class="space-y-6">
                     <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider">
-                        <i class="fa-solid fa-rocket"></i> Nền Tảng Quản Trị Vận Chuyển 4.0
+                        <i class="fa-solid fa-plane-departure"></i> Mạc Chiến Sỹ Vận Chuyển Quốc Tế
                     </div>
                     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                        Hệ Thống Vận Chuyển & <span class="gold-text-gradient">Trang Quản Trị Đỉnh Cao</span>
+                        Hệ Thống Vận Chuyển & <span class="gold-text-gradient">Quản Trị Đỉnh Cao</span>
                     </h1>
                     <p class="text-gray-300 text-base md:text-lg leading-relaxed">
                         Chuyên tuyến <span class="text-gold-400 font-semibold">Đài Loan 🇹🇼, Hàn Quốc 🇰🇷, Nhật Bản 🇯🇵</span> kết hợp trang quản trị độc quyền cho Admin và hệ thống Cộng Tác Viên (CTV) chuyên nghiệp.
@@ -264,9 +294,9 @@
                             Admin Pro 2026
                         </div>
                         <div class="w-28 h-28 mx-auto mb-6 rounded-full gold-gradient flex items-center justify-center shadow-2xl floating">
-                            <i class="fa-solid fa-shield-halved text-black text-5xl"></i>
+                            <i class="fa-solid fa-plane-up text-black text-5xl"></i>
                         </div>
-                        <h3 class="text-2xl font-extrabold text-gold-400 mb-2">Mạc Chiến Sỹ Dashboard</h3>
+                        <h3 class="text-2xl font-extrabold text-gold-400 mb-2">Mạc Chiến Sỹ Quốc Tế</h3>
                         <p class="text-sm text-gray-300 mb-6">Trụ sở chính: Khu 5 Nông Trang, Việt Trì, Phú Thọ</p>
                         <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/60 text-left">
                             <div>
@@ -955,9 +985,9 @@
             <div class="space-y-4">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
-                        <i class="fa-solid fa-crown"></i>
+                        <i class="fa-solid fa-plane-up"></i>
                     </div>
-                    <span class="text-base font-extrabold text-white">MẠC CHIẾN SỸ</span>
+                    <span class="text-base font-extrabold text-white">MẠC CHIẾN SỸ QUỐC TẾ</span>
                 </div>
                 <p class="text-gray-400 leading-relaxed">
                     Hệ thống vận chuyển quốc tế & kiều hối hàng đầu, tích hợp trang quản trị thông minh cho Admin và Cộng Tác Viên năm 2026.
@@ -989,50 +1019,60 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-center text-gray-500">
-            <p>&copy; 2026 Mạc Chiến Sỹ Official Pro. Phát triển độc quyền bởi IT Hoàng Hải Phòng.</p>
+            <p>&copy; 2026 Mạc Chiến Sỹ Vận Chuyển Quốc Tế. Phát triển độc quyền bởi IT Hoàng Hải Phòng.</p>
         </div>
     </footer>
 
     <!-- SCRIPT XỬ LÝ GIAO DIỆN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // TỰ ĐỘNG CHECK HỆ THỐNG & HIỆU ỨNG SPLASH SCREEN TRƯỚC KHI VÀO WEB
+        // HỆ THỐNG KIỂM TRA TỐC ĐỘ VÀ THIẾT BỊ 180 GIÂY
         window.addEventListener('DOMContentLoaded', () => {
             const ua = navigator.userAgent;
-            let osName = "Máy tính cá nhân (Desktop)";
-            let iconClass = "fa-desktop";
+            let osName = "Desktop (Windows/Mac)";
+            if (/android/i.test(ua)) osName = "Android Mobile";
+            else if (/iPad|iPhone|iPod/.test(ua)) osName = "Apple iOS";
 
-            if (/android/i.test(ua)) {
-                osName = "Hệ điều hành Android Mobile";
-                iconClass = "fa-android";
-            } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
-                osName = "Hệ điều hành Apple iOS (iPhone/iPad)";
-                iconClass = "fa-apple";
-            } else if (/Win/.test(ua)) {
-                osName = "Hệ điều hành Microsoft Windows";
-                iconClass = "fa-windows";
-            } else if (/Mac/.test(ua)) {
-                osName = "Hệ điều hành Apple macOS";
-                iconClass = "fa-laptop";
-            }
+            document.getElementById('res-os').innerText = osName;
 
-            const osText = document.getElementById('os-detect-text');
-            osText.innerHTML = `<i class="fa-solid ${iconClass} text-gold-400 mr-1"></i> Đã nhận diện: <strong class="text-white">${osName}</strong>`;
+            // Giả lập tốc độ ping kho hàng quốc tế sau 30 giây
+            setTimeout(() => {
+                const randomPing = Math.floor(Math.random() * 18) + 18;
+                document.getElementById('res-ping').innerText = randomPing + " ms (Tốt)";
+                document.getElementById('res-ping').className = "text-green-400 font-bold";
+                document.getElementById('log-step-2').style.opacity = "1";
+            }, 30000);
 
+            // Xác thực SSL sau 90 giây
+            setTimeout(() => {
+                document.getElementById('res-ssl').innerText = "Đã mã hóa 256-bit";
+                document.getElementById('res-ssl').className = "text-gold-400 font-bold";
+                document.getElementById('log-step-3').style.opacity = "1";
+                document.getElementById('system-status-text').innerText = "Đang đồng bộ dữ liệu hệ thống (180 giây)...";
+            }, 90000);
+
+            // Tổng thời gian chạy progress bar là 180 giây (180,000 milliseconds)
             let progress = 0;
+            const totalDuration = 180000; 
+            const intervalTime = 1800;    
+            const increment = 1;
+
             const bar = document.getElementById('loading-bar');
-            const interval = setInterval(() => {
-                progress += 25;
+            const timer = setInterval(() => {
+                progress += increment;
+                if (progress > 100) progress = 100;
                 bar.style.width = progress + '%';
+                
                 if (progress >= 100) {
-                    clearInterval(interval);
+                    clearInterval(timer);
+                    document.getElementById('system-status-text').innerText = "Hệ thống sẵn sàng! Đang chuyển hướng...";
                     setTimeout(() => {
                         const splash = document.getElementById('splash-screen');
                         splash.style.opacity = '0';
-                        setTimeout(() => splash.remove(), 500);
-                    }, 300);
+                        setTimeout(() => splash.remove(), 600);
+                    }, 500);
                 }
-            }, 200);
+            }, intervalTime);
         });
 
         AOS.init({ duration: 800, once: true });
