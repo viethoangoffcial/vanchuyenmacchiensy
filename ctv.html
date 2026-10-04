@@ -1,0 +1,250 @@
+<!-- // 2026 CỔNG CỘNG TÁC VIÊN (CTV) - MẠC CHIẾN SỸ VẬN CHUYỂN QUỐC TẾ // -->
+<!-- // BẢN QUYỀN THUỘC VỀ IT HOÀNG HẢI PHÒNG - ZALO: 034.6984.269 // -->
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Cộng Tác Viên (CTV) - Mạc Chiến Sỹ Official Pro 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300: '#fde047', 400: '#facc15', 500: '#eab308', 600: '#ca8a04', 700: '#a16207' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #07090f; color: #f1f5f9; overflow-x: hidden; }
+        .gold-gradient { background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%); }
+        .gold-text-gradient { background: linear-gradient(135deg, #fef08a 0%, #facc15 50%, #ca8a04 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-panel { background: rgba(13, 18, 30, 0.88); backdrop-filter: blur(24px); border: 1px solid rgba(34, 197, 94, 0.25); box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+        .glass-nav { background: rgba(7, 9, 15, 0.95); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(34, 197, 94, 0.2); }
+        .glow-green { box-shadow: 0 0 35px rgba(34, 197, 94, 0.25); }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #07090f; }
+        ::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-[#07090f] text-gray-100 antialiased selection:bg-green-500 selection:text-black">
+
+    <!-- LỚP PHỦ XÁC THỰC ĐĂNG NHẬP CTV -->
+    <div id="auth-ctv-overlay" class="fixed inset-0 z-50 bg-[#07090f]/95 backdrop-blur-xl flex items-center justify-center p-4">
+        <div class="glass-panel p-8 md:p-10 rounded-3xl max-w-md w-full border border-green-500/40 space-y-6 shadow-2xl relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 text-green-500/10 text-9xl pointer-events-none"><i class="fa-solid fa-handshake-angle"></i></div>
+            
+            <div class="text-center space-y-2">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-green-600 to-emerald-400 mx-auto flex items-center justify-center shadow-lg glow-green text-black text-2xl font-black">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+                <h2 class="text-xl font-black text-white">Đăng Nhập Cộng Tác Viên (CTV)</h2>
+                <p class="text-xs text-gray-400">Kiểm tra doanh số, hoa hồng và tạo đơn hộ khách hàng.</p>
+            </div>
+
+            <form onsubmit="xuLyDangNhapCTV(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-bold text-gray-300 mb-1.5">Mã CTV hoặc Số Điện Thoại</label>
+                    <input type="text" id="ctv-user" required value="CTV_HAIPHONG_01" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500">
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-300 mb-1.5">Mật Khẩu CTV</label>
+                    <input type="password" id="ctv-pass" required placeholder="••••••••" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500">
+                </div>
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-black font-extrabold rounded-xl shadow-lg hover:scale-[1.02] transition text-sm">
+                    Đăng Nhập Cổng CTV
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- THANH ĐIỀU HƯỚNG CTV -->
+    <nav class="sticky top-0 left-0 right-0 z-40 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-green-600 to-emerald-400 flex items-center justify-center shadow-lg glow-green text-black font-black text-xl">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-black text-green-400 tracking-wide block">CTV PORTAL PRO</span>
+                        <span class="text-[10px] text-gray-400 font-bold tracking-widest uppercase">Mạc Chiến Sỹ Vận Chuyển Quốc Tế</span>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-4 text-xs font-bold text-gray-300">
+                    <a href="index.html" class="hover:text-green-400 transition"><i class="fa-solid fa-house mr-1"></i> Trang Chủ</a>
+                    <a href="#tao-don-ho" class="hover:text-green-400 transition"><i class="fa-solid fa-plus-circle mr-1"></i> Tạo Đơn Hộ KH</a>
+                    <a href="#hoa-hong" class="hover:text-green-400 transition"><i class="fa-solid fa-wallet mr-1"></i> Ví Hoa Hồng</a>
+                </div>
+
+                <div class="flex items-center space-x-3">
+                    <button onclick="dangXuatCTV()" class="px-3 py-2 bg-red-500/20 border border-red-500/40 text-red-400 text-xs font-bold rounded-xl hover:bg-red-500/30 transition flex items-center shadow-md">
+                        <i class="fa-solid fa-right-from-bracket mr-1.5"></i> Đăng Xuất
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- NỘI DUNG CHÍNH CỔNG CTV -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+        
+        <!-- THỐNG KÊ DOANH SỐ & HOA HỒNG -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-6 rounded-3xl border border-green-500/40 space-y-2">
+                <span class="text-xs text-gray-400 font-bold uppercase"><i class="fa-solid fa-boxes-stacked text-green-400 mr-1.5"></i> Tổng Đơn Hộ Đã Tạo</span>
+                <h3 class="text-3xl font-black text-white">42 Đơn</h3>
+                <span class="text-[11px] text-emerald-400 font-bold">+5 đơn hôm nay</span>
+            </div>
+            <div class="glass-panel p-6 rounded-3xl border border-green-500/40 space-y-2">
+                <span class="text-xs text-gray-400 font-bold uppercase"><i class="fa-solid fa-coins text-green-400 mr-1.5"></i> Hoa Hồng Khả Dụng</span>
+                <h3 class="text-3xl font-black text-green-400" id="ctv-balance">3,850,000 VNĐ</h3>
+                <span class="text-[11px] text-gray-300">Sẵn sàng rút về tài khoản ngân hàng</span>
+            </div>
+            <div class="glass-panel p-6 rounded-3xl border border-green-500/40 space-y-2 flex flex-col justify-between">
+                <div>
+                    <span class="text-xs text-gray-400 font-bold uppercase"><i class="fa-solid fa-qrcode text-green-400 mr-1.5"></i> Link Giới Thiệu Khách</span>
+                    <p class="text-xs text-gray-300 mt-1">Chia sẻ link để tự động ghi nhận hoa hồng:</p>
+                </div>
+                <button onclick="saoChepLinkCTV()" class="w-full py-2.5 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl text-xs transition flex items-center justify-center">
+                    <i class="fa-solid fa-copy mr-1.5"></i> Sao Chép Link Giới Thiệu
+                </button>
+            </div>
+        </div>
+
+        <!-- MODULE TẠO ĐƠN HỘ KHÁCH HÀNG -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl border border-green-500/50 space-y-6 shadow-xl" id="tao-don-ho">
+            <div class="border-b border-slate-800 pb-4">
+                <h3 class="text-base font-bold text-white flex items-center">
+                    <i class="fa-solid fa-paper-plane text-green-400 mr-2.5"></i> Tạo Đơn Hàng Hộ Khách Hàng (Tích Điểm & Hoa Hồng CTV)
+                </h3>
+                <p class="text-[11px] text-gray-400 mt-1">Đơn hàng tạo từ cổng CTV sẽ tự động đồng bộ vào hệ thống quản trị chung của Admin.</p>
+            </div>
+
+            <form onsubmit="xuLyTaoDonHo(event)" class="space-y-4 text-xs">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-gray-300 mb-1">Họ Tên Khách Hàng</label>
+                        <input type="text" id="ctv-kh-name" required placeholder="Nhập tên khách hàng..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-300 mb-1">Số Điện Thoại Khách</label>
+                        <input type="tel" id="ctv-kh-phone" required placeholder="Nhập SĐT khách hàng..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block font-bold text-gray-300 mb-1">Tuyến Vận Chuyển</label>
+                        <select id="ctv-route" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500">
+                            <option value="Đài Loan (Tiêu chuẩn)">🇻🇳 ➔ 🇹🇼 Việt Nam đi Đài Loan</option>
+                            <option value="Đài Loan về VN">🇹🇼 ➔ 🇻🇳 Đài Loan về Việt Nam</option>
+                            <option value="Hàn Quốc">🇰🇷 Việt Nam - Hàn Quốc</option>
+                            <option value="Nhật Bản">🇯🇵 Việt Nam - Nhật Bản</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-bold text-gray-300 mb-1">Trọng Lượng (Kg) & Mô Tả Hàng Hóa</label>
+                        <input type="text" id="ctv-item" required placeholder="Ví dụ: Mỹ phẩm, 3kg..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-green-500">
+                    </div>
+                </div>
+                <button type="submit" class="w-full py-4 bg-gradient-to-r from-green-600 to-emerald-500 text-black font-extrabold rounded-xl shadow-lg hover:scale-[1.02] transition text-sm">
+                    Xác Nhận Tạo Đơn Hộ & Nhận Hoa Hồng
+                </button>
+            </form>
+        </div>
+
+        <!-- DANH SÁCH ĐƠN HÀNG HỘ ĐÃ TẠO -->
+        <div class="glass-panel p-6 md:p-8 rounded-3xl border border-green-500/30 space-y-6" id="hoa-hong">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <h3 class="text-base font-bold text-white flex items-center">
+                    <i class="fa-solid fa-list-check text-green-400 mr-2.5"></i> Lịch Sử Đơn Hộ & Hoa Hồng Đã Nhận
+                </h3>
+                <span class="text-xs text-green-400 font-bold">Cập nhật thời gian thực</span>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs text-gray-300" id="ctv-orders-table">
+                    <thead class="bg-slate-900 text-green-400 uppercase font-bold">
+                        <tr>
+                            <th class="p-3.5 rounded-l-xl">Mã Đơn Hộ</th>
+                            <th class="p-3.5">Khách Hàng</th>
+                            <th class="p-3.5">Tuyến Vận Chuyển</th>
+                            <th class="p-3.5">Hàng Hóa</th>
+                            <th class="p-3.5">Hoa Hồng Nhận</th>
+                            <th class="p-3.5 rounded-r-xl text-center">Trạng Thái</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800">
+                        <tr class="hover:bg-slate-900/40 transition">
+                            <td class="p-3.5 font-extrabold text-green-400">CTV-88102</td>
+                            <td class="p-3.5 font-medium text-white">Lê Văn Hùng (0346984269)</td>
+                            <td class="p-3.5">Đài Loan (Tiêu chuẩn)</td>
+                            <td class="p-3.5">Quần áo thời trang (4kg)</td>
+                            <td class="p-3.5 font-bold text-gold-400">+120,000 VNĐ</td>
+                            <td class="p-3.5 text-center"><span class="px-2.5 py-1 rounded bg-green-500/20 text-green-400 font-bold text-[10px]">Đã Thanh Toán</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JAVASCRIPT XỬ LÝ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        function xuLyDangNhapCTV(e) {
+            e.preventDefault();
+            document.getElementById('auth-ctv-overlay').classList.add('hidden');
+            alert('Đăng nhập cổng Cộng Tác Viên thành công!');
+        }
+
+        function dangXuatCTV() {
+            if (confirm('Bạn muốn đăng xuất khỏi cổng CTV?')) {
+                document.getElementById('auth-ctv-overlay').classList.remove('hidden');
+            }
+        }
+
+        function saoChepLinkCTV() {
+            const link = window.location.origin + '/khachhang.html?ref=CTV_HAIPHONG_01';
+            navigator.clipboard.writeText(link);
+            alert('Đã sao chép đường dẫn giới thiệu CTV: ' + link);
+        }
+
+        function xuLyTaoDonHo(e) {
+            e.preventDefault();
+            const name = document.getElementById('ctv-kh-name').value;
+            const phone = document.getElementById('ctv-kh-phone').value;
+            const route = document.getElementById('ctv-route').value;
+            const item = document.getElementById('ctv-item').value;
+
+            const maDon = 'CTV-' + Math.floor(10000 + Math.random() * 90000);
+            const hoaHong = Math.floor(50000 + Math.random() * 100000);
+
+            const tbody = document.querySelector('#ctv-orders-table tbody');
+            const newRow = document.createElement('tr');
+            newRow.className = 'hover:bg-slate-900/40 transition bg-green-500/5';
+            newRow.innerHTML = `
+                <td class="p-3.5 font-extrabold text-green-400">${maDon}</td>
+                <td class="p-3.5 font-medium text-white">${name} (${phone})</td>
+                <td class="p-3.5">${route}</td>
+                <td class="p-3.5">${item}</td>
+                <td class="p-3.5 font-bold text-gold-400">+${hoaHong.toLocaleString()} VNĐ</td>
+                <td class="p-3.5 text-center"><span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 font-bold text-[10px]">Đang Xử Lý</span></td>
+            `;
+            tbody.insertBefore(newRow, tbody.firstChild);
+            alert(`Tạo đơn hộ ${maDon} thành công! Hệ thống đã ghi nhận hoa hồng tạm tính vào ví của bạn.`);
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
