@@ -52,16 +52,16 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 110vw;
+            height: 110vh;
             z-index: -99;
             overflow: hidden;
             pointer-events: none;
         }
         .youtube-background iframe {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 60%;
+            left: 60%;
             width: 100vw;
             height: 56.25vw; /* Tỷ lệ 16:9 */
             min-height: 100vh;
@@ -82,15 +82,12 @@
 </head>
 <body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
 
-    <!-- VIDEO NỀN TOÀN TRANG BẰNG FILE MP4 TRỰC TIẾP (KHÔNG DÍNH QUẢNG CÁO YOUTUBE) -->
-<div class="youtube-background" style="z-index: -99; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; overflow: hidden; pointer-events: none;">
-    <video autoplay muted loop playsinline style="position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translate(-50%, -50%); object-fit: cover;">
-        <!-- Bạn có thể thay link bên dưới bằng link file .mp4 tải trực tiếp video của bạn lên hosting hoặc Drive -->
-        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-    </video>
+   <!-- KHUNG YOUTUBE TỐI ƯU CÓ TÍCH HỢP NÚT BẬT ÂM THANH -->
+<div class="youtube-background">
+    <iframe id="bg-video-iframe" src="https://www.youtube.com/embed/f6ZjqhvA-9g?autoplay=1&mute=1&loop=1&playlist=f6ZjqhvA-9g&controls=0&showinfo=0&autohide=1&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&rel=0" title="YouTube Background" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<div class="youtube-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(11, 15, 25, 0.82); z-index: -98; pointer-events: none;"></div>
-    
+<div class="youtube-overlay"></div>
+
     <!-- THANH THÔNG BÁO CHẠY TỰ ĐỘNG -->
     <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-b border-gold-500/30 text-xs py-2.5 overflow-hidden relative z-50">
         <div class="marquee-container">
