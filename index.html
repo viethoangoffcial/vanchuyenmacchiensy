@@ -492,34 +492,77 @@
         </div>
     </section>
 
-    <!-- Khu vực Tải Ứng Dụng -->
-    <section id="tai-app" class="py-16 bg-[#0b0f19]/80 backdrop-blur-md text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">Tải Ứng Dụng Mạc Chiến Sỹ</h2>
-            <p class="text-gray-400 mb-10">Chọn phiên bản phù hợp với thiết bị của bạn để trải nghiệm tốt nhất.</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Phiên bản Android -->
-                <div class="bg-gray-900/90 border border-gray-800 p-8 rounded-2xl shadow-lg hover:border-[#fde047] transition duration-300">
-                    <div class="text-[#fde047] text-4xl mb-4">
-                        <i class="fa-brands fa-android"></i>
+   <!-- Khu vực Tải Ứng Dụng (Đã thiết kế lại chuyên nghiệp, cao cấp) -->
+    <section id="tai-app" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-gold-500/5 to-transparent rounded-3xl pointer-events-none"></div>
+        
+        <div class="text-center max-w-3xl mx-auto mb-16 relative z-10" data-aos="fade-up">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider mb-4 shadow-lg">
+                <i class="fa-solid fa-cloud-arrow-down"></i> Tải Ứng Dụng Di Động Official 2026
+            </div>
+            <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                Trải Nghiệm Mượt Mà Trên <span class="gold-text-gradient">Mọi Thiết Bị</span>
+            </h2>
+            <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                Tải ngay ứng dụng Mạc Chiến Sỹ trực tiếp về điện thoại để quản lý đơn hàng, tra cứu mã vận đơn và nhận thông báo hỏa tốc mọi lúc mọi nơi.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+            <!-- Phiên bản Android -->
+            <div class="glass-card p-8 md:p-10 rounded-3xl border border-gold-500/30 hover:border-gold-500 transition duration-300 flex flex-col justify-between group shadow-xl" data-aos="fade-right">
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div class="w-16 h-16 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition duration-300">
+                            <i class="fa-brands fa-android"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-[11px] font-bold">Phiên bản Pro 2026</span>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Dành cho Android</h3>
-                    <p class="text-gray-400 text-sm mb-6">Tải tệp cài đặt hoặc phiên bản web tương thích.</p>
-                    <a href="khachhang.html" class="inline-block bg-[#fde047] text-gray-900 font-semibold px-6 py-3 rounded-xl hover:bg-yellow-400 transition">
-                        Tải về Android (.html)
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-gold-400 transition">Dành Cho Android</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Tối ưu hóa tuyệt đối cho các dòng máy Samsung, Oppo, Xiaomi và các thiết bị chạy hệ điều hành Android.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-gray-400 pt-2 border-t border-slate-800">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-gold-400 mr-2"></i> Cài đặt nhanh chóng qua tệp chuẩn</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-gold-400 mr-2"></i> Nhận thông báo đơn hàng đẩy trực tiếp</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-gold-400 mr-2"></i> Giao diện Dark Mode tiết kiệm pin</li>
+                    </ul>
+                </div>
+                <div class="pt-8">
+                    <a href="khachhang.html" class="w-full py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg hover:scale-[1.02] transition flex items-center justify-center space-x-2 text-sm">
+                        <i class="fa-solid fa-download text-base"></i>
+                        <span>Tải Về Cho Android (.html)</span>
                     </a>
                 </div>
+            </div>
 
-                <!-- Phiên bản iOS -->
-                <div class="bg-gray-900/90 border border-gray-800 p-8 rounded-2xl shadow-lg hover:border-[#fde047] transition duration-300">
-                    <div class="text-[#fde047] text-4xl mb-4">
-                        <i class="fa-brands fa-apple"></i>
+            <!-- Phiên bản iOS -->
+            <div class="glass-card p-8 md:p-10 rounded-3xl border border-gold-500/30 hover:border-gold-500 transition duration-300 flex flex-col justify-between group shadow-xl" data-aos="fade-left">
+                <div class="space-y-6">
+                    <div class="flex items-center justify-between">
+                        <div class="w-16 h-16 rounded-2xl bg-sky-500/15 border border-sky-500/30 text-sky-400 flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition duration-300">
+                            <i class="fa-brands fa-apple"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-sky-500/20 text-sky-400 text-[11px] font-bold">Tối ưu Safari & App</span>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Dành cho iOS (iPhone/iPad)</h3>
-                    <p class="text-gray-400 text-sm mb-6">Trải nghiệm giao diện tối ưu trên hệ điều hành iOS.</p>
-                    <a href="tool.html" class="inline-block bg-[#fde047] text-gray-900 font-semibold px-6 py-3 rounded-xl hover:bg-yellow-400 transition">
-                        Tải về iOS (.html)
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-white group-hover:text-gold-400 transition">Dành Cho iOS (iPhone / iPad)</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Thiết kế chuẩn mực giao diện Apple, mang lại trải nghiệm mượt mà, bảo mật cao cấp cho thiết bị iPhone và iPad.
+                        </p>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-gray-400 pt-2 border-t border-slate-800">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-gold-400 mr-2"></i> Tương thích hoàn hảo với Safari</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-gold-400 mr-2"></i> Thêm ra màn hình chính cực dễ</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-gold-400 mr-2"></i> Bảo mật thông tin tài khoản tuyệt đối</li>
+                    </ul>
+                </div>
+                <div class="pt-8">
+                    <a href="tool.html" class="w-full py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg hover:scale-[1.02] transition flex items-center justify-center space-x-2 text-sm">
+                        <i class="fa-solid fa-download text-base"></i>
+                        <span>Tải Về Cho iOS (.html)</span>
                     </a>
                 </div>
             </div>
