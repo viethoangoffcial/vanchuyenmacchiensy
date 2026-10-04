@@ -82,12 +82,18 @@
 </head>
 <body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
 
-   <!-- KHUNG YOUTUBE TỐI ƯU CÓ TÍCH HỢP NÚT BẬT ÂM THANH -->
+  <!-- KHUNG VIDEO YOUTUBE NỀN CÓ NÚT BẬT/TẮT TIẾNG -->
 <div class="youtube-background">
-    <iframe id="bg-video-iframe" src="https://www.youtube.com/embed/f6ZjqhvA-9g?autoplay=1&mute=1&loop=1&playlist=f6ZjqhvA-9g&controls=0&showinfo=0&autohide=1&modestbranding=1&disablekb=1&fs=0&iv_load_policy=3&rel=0" title="YouTube Background" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div id="player"></div>
 </div>
 <div class="youtube-overlay"></div>
 
+<!-- NÚT BẬT/TẮT ÂM THANH NỔI TRÊN MÀN HÌNH -->
+<button onclick="toggleAudio()" id="audio-toggle-btn" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-full bg-slate-900/90 border border-gold-500/50 text-gold-400 text-xs font-bold shadow-lg hover:scale-105 transition flex items-center space-x-2">
+    <i id="audio-icon" class="fa-solid fa-volume-xmark"></i>
+    <span id="audio-text">Bật Tiếng</span>
+</button> 
+    
     <!-- THANH THÔNG BÁO CHẠY TỰ ĐỘNG -->
     <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-b border-gold-500/30 text-xs py-2.5 overflow-hidden relative z-50">
         <div class="marquee-container">
@@ -1049,6 +1055,61 @@
 
         setInterval(pushLiveOrder, 4000);
         for(let i=0; i<3; i++) { pushLiveOrder(); }
+
+    // Tải YouTube Iframe API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId: 'f6ZjqhvA-9g',
+            playerVars: {
+                'autoplay': 1,
+                'mute': 1, // Bắt buộc tắt tiếng lúc đầu để trình duyệt cho phép tự động phát
+                'loop': 1,
+                'playlist': 'f6ZjqhvA-9g',
+                'controls': 0,
+                'showinfo': 0,
+                'autohide': 1,
+                'modestbranding': 1,
+                'disablekb': 1,
+                'fs': 0,
+                'iv_load_policy': 3,
+                'rel': 0,
+                'start': 143 // Bắt đầu từ giây 143 như ý bạn
+            },
+            events: {
+                'onReady': function(event) {
+                    event.target.playVideo();
+                }
+            }
+        });
+    }
+
+    // Hàm xử lý bật/tắt tiếng khi người dùng bấm vào nút
+    let isMuted = true;
+    function toggleAudio() {
+        if (!player) return;
+        const icon = document.getElementById('audio-icon');
+        const text = document.getElementById('audio-text');
+        
+        if (isMuted) {
+            player.unMute();
+            player.setVolume(100);
+            icon.className = "fa-solid fa-volume-high";
+            text.innerText = "Tắt Tiếng";
+            isMuted = false;
+        } else {
+            player.mute();
+            icon.className = "fa-solid fa-volume-xmark";
+            text.innerText = "Bật Tiếng";
+            isMuted = true;
+        }
+    }
+
     </script>
 </body>
 </html>
