@@ -3,7 +3,7 @@
 <html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Mạc Chiến Sỹ Official Pro 2026 - Hệ Thống Vận Chuyển & Quản Trị Độc Quyền</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -47,7 +47,19 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* KHUNG VIDEO YOUTUBE LÀM NỀN TOÀN TRANG SẮC NÉT */
+        /* MÀN HÌNH CHỜ KIỂM TRA HỆ THỐNG (SPLASH SCREEN) */
+        #splash-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: #070a12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        /* KHUNG VIDEO YOUTUBE LÀM NỀN TOÀN TRANG SIÊU SẮC NÉT */
         .youtube-background {
             position: fixed;
             top: 0;
@@ -58,17 +70,17 @@
             overflow: hidden;
             pointer-events: none;
         }
-        /* Phóng to và căn chỉnh để video luôn lấp đầy màn hình với độ phân giải cao nhất */
         .youtube-background iframe, .youtube-background #player {
             position: absolute;
             top: 50%;
             left: 50%;
             width: 100vw;
-            height: 56.25vw; /* Tỷ lệ chuẩn 16:9 */
+            height: 56.25vw;
             min-height: 150vh;
-            min-width: 266.66vh; /* Ép kích thước siêu lớn để YouTube tự động xuất độ nét cao HD */
+            min-width: 266.66vh;
             transform: translate(-50%, -50%);
             pointer-events: none;
+            filter: contrast(1.1) saturate(1.15) brightness(1.05);
         }
         .youtube-overlay {
             position: fixed;
@@ -76,13 +88,30 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(11, 15, 25, 0.82); /* Lớp phủ tối màu cân bằng độ tương phản */
+            background: rgba(11, 15, 25, 0.55);
             z-index: -98;
             pointer-events: none;
         }
     </style>
 </head>
 <body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
+
+  <!-- MÀN HÌNH CHỜ CHECK HỆ THỐNG TỰ ĐỘNG -->
+  <div id="splash-screen">
+      <div class="glass-card max-w-sm w-full mx-4 p-8 rounded-3xl border border-gold-500/40 glow-gold text-center space-y-6 shadow-2xl">
+          <div class="w-20 h-20 mx-auto rounded-2xl gold-gradient flex items-center justify-center text-black text-3xl font-bold shadow-lg floating">
+              <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="space-y-2">
+              <h3 class="text-xl font-extrabold gold-text-gradient">Mạc Chiến Sỹ 2026</h3>
+              <p id="os-detect-text" class="text-xs text-gray-300 font-medium">Đang nhận diện thiết bị & hệ điều hành...</p>
+          </div>
+          <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden border border-slate-700">
+              <div id="loading-bar" class="gold-gradient h-full w-0 transition-all duration-300"></div>
+          </div>
+          <div class="text-[10px] text-gray-500">Bản quyền phát triển bởi IT Hoàng Hải Phòng</div>
+      </div>
+  </div>
 
   <!-- KHUNG VIDEO YOUTUBE NỀN CÓ NÚT BẬT/TẮT TIẾNG -->
 <div class="youtube-background">
@@ -967,6 +996,45 @@
     <!-- SCRIPT XỬ LÝ GIAO DIỆN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // TỰ ĐỘNG CHECK HỆ THỐNG & HIỆU ỨNG SPLASH SCREEN TRƯỚC KHI VÀO WEB
+        window.addEventListener('DOMContentLoaded', () => {
+            const ua = navigator.userAgent;
+            let osName = "Máy tính cá nhân (Desktop)";
+            let iconClass = "fa-desktop";
+
+            if (/android/i.test(ua)) {
+                osName = "Hệ điều hành Android Mobile";
+                iconClass = "fa-android";
+            } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+                osName = "Hệ điều hành Apple iOS (iPhone/iPad)";
+                iconClass = "fa-apple";
+            } else if (/Win/.test(ua)) {
+                osName = "Hệ điều hành Microsoft Windows";
+                iconClass = "fa-windows";
+            } else if (/Mac/.test(ua)) {
+                osName = "Hệ điều hành Apple macOS";
+                iconClass = "fa-laptop";
+            }
+
+            const osText = document.getElementById('os-detect-text');
+            osText.innerHTML = `<i class="fa-solid ${iconClass} text-gold-400 mr-1"></i> Đã nhận diện: <strong class="text-white">${osName}</strong>`;
+
+            let progress = 0;
+            const bar = document.getElementById('loading-bar');
+            const interval = setInterval(() => {
+                progress += 25;
+                bar.style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        const splash = document.getElementById('splash-screen');
+                        splash.style.opacity = '0';
+                        setTimeout(() => splash.remove(), 500);
+                    }, 300);
+                }
+            }, 200);
+        });
+
         AOS.init({ duration: 800, once: true });
 
         function moModalVaoApp() {
@@ -1070,7 +1138,7 @@
             videoId: 'f6ZjqhvA-9g',
             playerVars: {
                 'autoplay': 1,
-                'mute': 1, // Bắt buộc tắt tiếng lúc đầu để trình duyệt cho phép tự động phát
+                'mute': 1,
                 'loop': 1,
                 'playlist': 'f6ZjqhvA-9g',
                 'controls': 0,
@@ -1081,19 +1149,18 @@
                 'fs': 0,
                 'iv_load_policy': 3,
                 'rel': 0,
-                'start': 143, // Bắt đầu từ giây 143 như ý bạn
-                'vq': 'hd1080' // Buộc YouTube tải luồng video chất lượng cao HD 1080p sắc nét
+                'start': 143,
+                'vq': 'hd1080'
             },
             events: {
                 'onReady': function(event) {
-                    event.target.setPlaybackQuality('hd1080'); // Kích hoạt chất lượng cao nhất khi player sẵn sàng
+                    event.target.setPlaybackQuality('hd1080');
                     event.target.playVideo();
                 }
             }
         });
     }
 
-    // Hàm xử lý bật/tắt tiếng khi người dùng bấm vào nút
     let isMuted = true;
     function toggleAudio() {
         if (!player) return;
