@@ -46,9 +46,47 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* KHUNG VIDEO YOUTUBE LÀM NỀN TOÀN TRANG */
+        .youtube-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -99;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .youtube-background iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 56.25vw; /* Tỷ lệ 16:9 */
+            min-height: 100vh;
+            min-width: 177.77vh;
+            transform: translate(-50%, -50%);
+        }
+        .youtube-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(11, 15, 25, 0.82); /* Lớp phủ tối màu để tương thích giao diện Dark Mode */
+            z-index: -98;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body class="bg-[#0b0f19] text-gray-100 antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- VIDEO YOUTUBE NỀN TOÀN TRANG -->
+    <div class="youtube-background">
+        <iframe src="https://www.youtube.com/embed/f6ZjqhvA-9g?autoplay=1&mute=1&loop=1&playlist=f6ZjqhvA-9g&controls=0&showinfo=0&autohide=1&modestbranding=1&disablekb=1&fs=0" title="YouTube Background" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="youtube-overlay"></div>
 
     <!-- THANH THÔNG BÁO CHẠY TỰ ĐỘNG -->
     <div class="bg-gradient-to-r from-amber-950 via-slate-900 to-amber-950 border-b border-gold-500/30 text-xs py-2.5 overflow-hidden relative z-50">
@@ -77,13 +115,14 @@
                 </a>
                 <div class="hidden lg:flex items-center space-x-4 text-xs font-semibold">
                     <a href="index.html" class="text-gold-400 transition">Trang Chủ</a>
+                    <a href="#tai-app" class="text-gray-300 hover:text-gold-400 transition flex items-center"><i class="fa-solid fa-cloud-arrow-down text-gold-400 mr-1"></i> Tải App</a>
+                    <a href="#tinh-nang-moi" class="text-gray-300 hover:text-gold-400 transition">Tính Năng Mới</a>
                     <a href="#gioi-thieu-app" class="text-gray-300 hover:text-gold-400 transition">Giới Thiệu App</a>
                     <a href="#gioi-thieu-quan-tri" class="text-gray-300 hover:text-gold-400 transition">Quản Trị Viên</a>
                     <a href="#don-hang-live" class="text-gray-300 hover:text-gold-400 transition flex items-center">
                         <span class="w-2 h-2 rounded-full bg-red-500 inline-block mr-1.5 animate-ping"></span> Live Đơn Hàng
                     </a>
                     <a href="#dich-vu" class="text-gray-300 hover:text-gold-400 transition">Dịch Vụ</a>
-                    <a href="#cong-nghe" class="text-gray-300 hover:text-gold-400 transition">Công Nghệ</a>
                     <a href="#bang-gia" class="text-gray-300 hover:text-gold-400 transition">Bảng Giá</a>
                     <a href="#tien-ich" class="text-gray-300 hover:text-gold-400 transition">Tiện Ích</a>
                 </div>
@@ -177,8 +216,8 @@
                         <button onclick="moModalVaoApp()" class="px-7 py-4 gold-gradient text-black font-extrabold rounded-xl shadow-lg glow-gold hover:scale-105 transition flex items-center">
                             <i class="fa-solid fa-rocket mr-2"></i> Trải Nghiệm Vào App
                         </button>
-                        <a href="#don-hang-live" class="px-7 py-4 bg-slate-800/80 border border-gold-500/40 text-gold-400 font-bold rounded-xl hover:bg-slate-700 transition flex items-center">
-                            <i class="fa-solid fa-chart-line mr-2"></i> Xem Live Đơn Hàng
+                        <a href="#tai-app" class="px-7 py-4 bg-slate-800/80 border border-gold-500/40 text-gold-400 font-bold rounded-xl hover:bg-slate-700 transition flex items-center">
+                            <i class="fa-solid fa-cloud-arrow-down mr-2"></i> Tải App Di Động
                         </a>
                     </div>
                 </div>
@@ -207,6 +246,53 @@
             </div>
         </div>
     </header>
+
+    <!-- KHU VỰC TÍNH NĂNG NÂNG CẤP MỚI -->
+    <section id="tinh-nang-moi" class="py-20 bg-slate-900/40 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase tracking-wider mb-4">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Nâng Cấp Mới Năm 2026
+                </div>
+                <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-4">
+                    Các Tính Năng Thông Minh <span class="gold-text-gradient">Được Tích Hợp Thêm</span>
+                </h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    Hệ thống liên tục cập nhật các công cụ hỗ trợ giao dịch, quản lý tài chính và tối ưu hóa trải nghiệm người dùng.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl space-y-4 border border-gold-500/30" data-aos="fade-up">
+                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">1. Quản Lý Ví & Hoa Hồng CTV</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Cộng tác viên có thể kiểm tra trực tiếp số dư hoa hồng, lịch sử tạo đơn hộ và rút tiền tự động về tài khoản ngân hàng liên kết chỉ trong 1 chạm.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-4 border border-gold-500/30" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-coins"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">2. Bảng Tỷ Giá Ngoại Tệ Thời Gian Thực</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Cập nhật tự động tỷ giá quy đổi VNĐ - TWD (Đài tệ), VNĐ - KRW (Won) và VNĐ - JPY (Yên Nhật) liên tục mỗi phút, hỗ trợ giao dịch kiều hối chính xác nhất.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl space-y-4 border border-gold-500/30" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold shadow-lg">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">3. Hệ Thống Đánh Giá & Khiếu Nại 24/7</h3>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Khách hàng dễ dàng chấm điểm chất lượng dịch vụ vận chuyển hoặc gửi yêu cầu hỗ trợ nhanh tới đội ngũ CSKH thông qua trung tâm trợ giúp tích hợp sẵn.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- PHẦN GIỚI THIỆU TRANG QUẢN TRỊ (ADMIN & CTV) -->
     <section id="gioi-thieu-quan-tri" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -334,6 +420,40 @@
                     <p class="text-sm text-gray-300 leading-relaxed">
                         Tích hợp cổng thanh toán BVBank an toàn, ghi nhận chính xác tỷ giá quy đổi tiền tệ Việt - Đài từng phút.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Khu vực Tải Ứng Dụng -->
+    <section id="tai-app" class="py-16 bg-[#0b0f19]/80 backdrop-blur-md text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Tải Ứng Dụng Mạc Chiến Sỹ</h2>
+            <p class="text-gray-400 mb-10">Chọn phiên bản phù hợp với thiết bị của bạn để trải nghiệm tốt nhất.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Phiên bản Android -->
+                <div class="bg-gray-900/90 border border-gray-800 p-8 rounded-2xl shadow-lg hover:border-[#fde047] transition duration-300">
+                    <div class="text-[#fde047] text-4xl mb-4">
+                        <i class="fa-brands fa-android"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Dành cho Android</h3>
+                    <p class="text-gray-400 text-sm mb-6">Tải tệp cài đặt hoặc phiên bản web tương thích.</p>
+                    <a href="khachhang.html" class="inline-block bg-[#fde047] text-gray-900 font-semibold px-6 py-3 rounded-xl hover:bg-yellow-400 transition">
+                        Tải về Android (.html)
+                    </a>
+                </div>
+
+                <!-- Phiên bản iOS -->
+                <div class="bg-gray-900/90 border border-gray-800 p-8 rounded-2xl shadow-lg hover:border-[#fde047] transition duration-300">
+                    <div class="text-[#fde047] text-4xl mb-4">
+                        <i class="fa-brands fa-apple"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Dành cho iOS (iPhone/iPad)</h3>
+                    <p class="text-gray-400 text-sm mb-6">Trải nghiệm giao diện tối ưu trên hệ điều hành iOS.</p>
+                    <a href="tool.html" class="inline-block bg-[#fde047] text-gray-900 font-semibold px-6 py-3 rounded-xl hover:bg-yellow-400 transition">
+                        Tải về iOS (.html)
+                    </a>
                 </div>
             </div>
         </div>
@@ -486,51 +606,7 @@
         </div>
     </section>
 
-    <!-- PHẦN CÔNG NGHỆ -->
-    <section id="cong-nghe" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-bold uppercase mb-4">
-                    Công Nghệ Áp Dụng
-                </div>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
-                    Hệ Thống Công Nghệ <span class="gold-text-gradient">Đột Phá Trong Logistics</span>
-                </h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-card p-8 rounded-3xl space-y-4" data-aos="fade-up">
-                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">AI Chatbot Hỗ Trợ 24/7</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">
-                        Trợ lý ảo tích hợp sẵn trên website, giải đáp ngay lập tức các thắc mắc về cước phí, tình trạng đơn hàng và tỷ giá ngoại tệ.
-                    </p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl space-y-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold">
-                        <i class="fa-solid fa-code-merge"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">Google Apps Script & API</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">
-                        Đồng bộ dữ liệu đơn hàng thời gian thực qua cơ sở dữ liệu đám mây, tự động gửi thông báo chi tiết qua Telegram Bot.
-                    </p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl space-y-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 rounded-2xl gold-gradient flex items-center justify-center text-black text-2xl font-bold">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">Bảo Mật & Thanh Toán BVBank</h3>
-                    <p class="text-sm text-gray-300 leading-relaxed">
-                        Hệ thống thanh toán tự động qua cổng BVBank, đảm bảo xác thực giao dịch kiều hối nhanh chóng và an toàn tuyệt đối.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PHẦN BẢNG GIÁ (ĐÃ ĐƯỢC NÂNG CẤP HOÀN CHỈNH) -->
+    <!-- PHẦN BẢNG GIÁ -->
     <section id="bang-gia" class="py-20 bg-slate-900/30 border-y border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
@@ -796,7 +872,7 @@
                 </div>
             </div>
 
-            <div class="glass-card p-8 rounded-3xl overflow-x-auto border border-slate-700">
+            <div class="glass-card p-8 rounded-3xl overflow-x-auto border border-slate-700 mb-12">
                 <h3 class="text-lg font-bold text-white mb-4 flex items-center"><i class="fa-solid fa-table-list text-gold-400 mr-2"></i> Danh Sách Đơn Hàng Quản Trị (Real-time Sync)</h3>
                 <table class="w-full text-left text-xs text-gray-300">
                     <thead class="bg-slate-800 text-gold-400 uppercase font-bold">
@@ -834,307 +910,145 @@
                 </table>
             </div>
         </div>
-  
-        <!-- KHU VỰC ĐỐI TÁC HÃNG HÀNG KHÔNG -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
-            <div class="glass-card p-6 md:p-8 rounded-3xl border border-gold-500/30">
-                <h4 class="text-lg font-bold text-white mb-4 flex items-center">
-                    <i class="fa-solid fa-plane text-gold-400 mr-2"></i> Các Hãng Hàng Không Đối Tác Vận Chuyển
-                </h4>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs">
-                    <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700 text-center">
-                        <strong class="text-gold-400 block mb-1">EVA Air & China Airlines</strong>
-                        <span class="text-gray-300">Chuyên tuyến Đài Loan 🇹🇼</span>
-                    </div>
-                    <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700 text-center">
-                        <strong class="text-gold-400 block mb-1">Korean Air & Asiana Airlines</strong>
-                        <span class="text-gray-300">Chuyên tuyến Hàn Quốc 🇰🇷</span>
-                    </div>
-                    <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700 text-center">
-                        <strong class="text-gold-400 block mb-1">Japan Airlines & ANA</strong>
-                        <span class="text-gray-300">Chuyên tuyến Nhật Bản 🇯🇵</span>
-                    </div>
-                    <div class="p-3 bg-slate-800/80 rounded-xl border border-slate-700 text-center">
-                        <strong class="text-gold-400 block mb-1">Vietnam Airlines & VietJet</strong>
-                        <span class="text-gray-300">Kết nối nội địa & quốc tế</span>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
-    <!-- CHÂN TRANG (FOOTER) -->
-    <footer class="glass-nav py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center shadow-lg">
-                            <i class="fa-solid fa-crown text-black text-sm"></i>
-                        </div>
-                        <span class="text-lg font-extrabold gold-text-gradient">MẠC CHIẾN SỸ</span>
+    <!-- FOOTER -->
+    <footer class="bg-[#070a12]/90 backdrop-blur-md border-t border-gold-500/20 py-12 text-gray-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
+                        <i class="fa-solid fa-crown"></i>
                     </div>
-                    <p class="text-xs text-gray-400 leading-relaxed">
-                        Hệ thống chuyển phát nhanh quốc tế và trang quản trị vận hành toàn diện, uy tín và chuyên nghiệp hàng đầu.
-                    </p>
+                    <span class="text-base font-extrabold text-white">MẠC CHIẾN SỸ</span>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Liên Kết Nhanh</h4>
-                    <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="index.html" class="hover:text-gold-400 transition">Trang Chủ</a></li>
-                        <li><a href="#gioi-thieu-quan-tri" class="hover:text-gold-400 transition">Trang Quản Trị Viên</a></li>
-                        <li><a href="#don-hang-live" class="hover:text-gold-400 transition">Live Đơn Hàng</a></li>
-                        <li><a href="#bang-gia" class="hover:text-gold-400 transition">Bảng Giá Cước</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Tiện Ích</h4>
-                    <ul class="space-y-2 text-xs text-gray-400">
-                        <li><a href="#tien-ich" class="hover:text-gold-400 transition">Tạo Đơn Hàng Mới</a></li>
-                        <li><a href="#tien-ich" class="hover:text-gold-400 transition">Tra Cứu Vận Đơn</a></li>
-                        <li><button onclick="moModalVaoApp()" class="hover:text-gold-400 transition text-left">Vào App Hệ Thống</button></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Trụ Sở Chính</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed mb-2">
-                        <i class="fa-solid fa-location-dot text-gold-400 mr-2"></i> Khu 5 Nông Trang, Việt Trì, Phú Thọ
-                    </p>
-                    <p class="text-xs text-gray-400">
-                        <i class="fa-solid fa-phone text-gold-400 mr-2"></i> Hỗ trợ 24/7 trực tuyến
-                    </p>
-                </div>
+                <p class="text-gray-400 leading-relaxed">
+                    Hệ thống vận chuyển quốc tế & kiều hối hàng đầu, tích hợp trang quản trị thông minh cho Admin và Cộng Tác Viên năm 2026.
+                </p>
             </div>
-            <div class="pt-8 border-t border-slate-800 text-center text-xs text-gray-500">
-                <p>© 2026 Mạc Chiến Sỹ Official Pro. All rights reserved.</p>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Đường Dẫn Nhanh</h4>
+                <ul class="space-y-2">
+                    <li><a href="#trang-chu" class="hover:text-gold-400 transition">Trang Chủ</a></li>
+                    <li><a href="#tinh-nang-moi" class="hover:text-gold-400 transition">Tính Năng Mới</a></li>
+                    <li><a href="#bang-gia" class="hover:text-gold-400 transition">Bảng Giá Cước</a></li>
+                    <li><a href="#tien-ich" class="hover:text-gold-400 transition">Tiện Ích Trực Tuyến</a></li>
+                </ul>
             </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Hỗ Trợ Khách Hàng</h4>
+                <ul class="space-y-2">
+                    <li><a href="#tien-ich" class="hover:text-gold-400 transition">Tra Cứu Vận Đơn</a></li>
+                    <li><a href="#tien-ich" class="hover:text-gold-400 transition">Chuyển Tiền Kiều Hối</a></li>
+                    <li><a href="#don-hang-live" class="hover:text-gold-400 transition">Live Đơn Hàng Real-time</a></li>
+                    <li><a href="#" onclick="moModalVaoApp()" class="hover:text-gold-400 transition">Đăng Nhập Quản Trị</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Liên Hệ Bản Quyền</h4>
+                <p class="text-gray-400 mb-2">IT Hoàng Hải Phòng</p>
+                <p class="text-gold-400 font-bold mb-2">Zalo: 034.6984.269</p>
+                <p class="text-[10px] text-gray-500">Bản quyền thuộc về Mạc Chiến Sỹ Official Pro 2026.</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-center text-gray-500">
+            <p>&copy; 2026 Mạc Chiến Sỹ Official Pro. Phát triển độc quyền bởi IT Hoàng Hải Phòng.</p>
         </div>
     </footer>
 
-    <!-- CÔNG CỤ CHATBOT AI WIDGET -->
-    <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="w-14 h-14 rounded-full gold-gradient flex items-center justify-center text-black shadow-2xl glow-gold hover:scale-110 transition relative">
-            <i class="fa-solid fa-robot text-2xl font-bold"></i>
-            <span class="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-black animate-pulse"></span>
-        </button>
-
-        <div id="chat-box" class="hidden absolute bottom-20 right-0 w-80 sm:w-96 glass-card rounded-3xl shadow-2xl border border-gold-500/40 overflow-hidden flex flex-col h-[450px]">
-            <div class="bg-slate-900/90 p-4 border-b border-gold-500/30 flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 rounded-full gold-gradient flex items-center justify-center text-black font-bold">
-                        <i class="fa-solid fa-headset text-sm"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-sm font-bold text-white">Trợ Lý Mạc Chiến Sỹ</h4>
-                        <span class="text-[10px] text-green-400 flex items-center"><span class="w-2 h-2 rounded-full bg-green-500 inline-block mr-1"></span> Trực tuyến 24/7</span>
-                    </div>
-                </div>
-                <button onclick="toggleChat()" class="text-gray-400 hover:text-white transition">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs">
-                <div class="flex items-start space-x-2">
-                    <div class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0 text-xs">AI</div>
-                    <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">
-                        Xin chào! Tôi là trợ lý ảo của Mạc Chiến Sỹ Official. Tôi có thể giúp gì cho bạn về vận chuyển quốc tế hay tính năng trang quản trị hôm nay?
-                    </div>
-                </div>
-            </div>
-
-            <div class="px-3 py-2 bg-slate-900/60 border-t border-slate-800 flex gap-1.5 overflow-x-auto text-[10px]">
-                <button onclick="guiTinNhanNhanh('Cước phí đi Đài Loan?')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-full whitespace-nowrap border border-gold-500/20 transition">Cước Đài Loan?</button>
-                <button onclick="guiTinNhanNhanh('Cách vào app hệ thống?')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-full whitespace-nowrap border border-gold-500/20 transition">Vào App?</button>
-                <button onclick="guiTinNhanNhanh('Tỷ giá chuyển tiền?')" class="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-gold-400 rounded-full whitespace-nowrap border border-gold-500/20 transition">Tỷ giá tiền?</button>
-            </div>
-
-            <div class="p-3 bg-slate-900 border-t border-gold-500/30 flex items-center space-x-2">
-                <input type="text" id="chat-input" placeholder="Nhập câu hỏi của bạn..." class="flex-1 bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-gold-500">
-                <button onclick="xuLyTinNhanNguoiDung()" class="w-9 h-9 rounded-xl gold-gradient flex items-center justify-center text-black font-bold shadow hover:scale-105 transition">
-                    <i class="fa-solid fa-paper-plane text-xs"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MÃ NGUỒN JAVASCRIPT XỬ LÝ -->
+    <!-- SCRIPT XỬ LÝ GIAO DIỆN -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
 
-        // Hàm điều khiển hiển thị Modal Vào App
         function moModalVaoApp() {
-            const modal = document.getElementById('modal-vao-app');
-            modal.classList.remove('hidden');
+            document.getElementById('modal-vao-app').classList.remove('hidden');
         }
-
         function dongModalVaoApp() {
-            const modal = document.getElementById('modal-vao-app');
-            modal.classList.add('hidden');
+            document.getElementById('modal-vao-app').classList.add('hidden');
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('modal-vao-app');
-            if (event.target === modal) {
-                dongModalVaoApp();
-            }
-        }
-
-        const sampleSenders = ["Nguyễn Văn Hùng", "Trần Thị Mai", "Lê Hoàng Nam", "Phạm Quỳnh Anh", "Đỗ Minh Tuấn", "Hoàng Thu Thảo", "Vũ Văn Minh", "Ngô Thanh Vân"];
-        const sampleReceivers = ["Chen Wei Lin", "Wang Xiao Mei", "Lin Yu Ting", "Zhang Zhi Hao", "Huang Pei Yu", "Tsai Ing Lee"];
-        const sampleItems = ["Mỹ phẩm cao cấp (2kg)", "Quần áo thời trang (4kg)", "Thực phẩm khô gia truyền (3kg)", "Hàng điện tử linh kiện (1kg)", "Đồ gia dụng thông minh (5kg)"];
-        const sampleRoutes = ["Đài Loan (🇹🇼)", "Hàn Quốc (🇰🇷)", "Nhật Bản (🇯🇵)"];
-        const sampleStatuses = [
-            { text: "Đang đóng gói", color: "bg-amber-500/20 text-amber-400" },
-            { text: "Đang bay quốc tế", color: "bg-green-500/20 text-green-400" },
-            { text: "Đã thông quan", color: "bg-blue-500/20 text-blue-400" }
-        ];
-
-        function taoDonHangLiveMoi() {
-            const container = document.getElementById('live-orders-container');
-            if (!container) return;
-
-            const randomCode = "MCS" + Math.floor(10000 + Math.random() * 90000);
-            const randomSender = sampleSenders[Math.floor(Math.random() * sampleSenders.length)];
-            const randomReceiver = sampleReceivers[Math.floor(Math.random() * sampleReceivers.length)];
-            const randomItem = sampleItems[Math.floor(Math.random() * sampleItems.length)];
-            const randomRoute = sampleRoutes[Math.floor(Math.random() * sampleRoutes.length)];
-            const randomStatus = sampleStatuses[Math.floor(Math.random() * sampleStatuses.length)];
-
-            const itemElement = document.createElement('div');
-            itemElement.className = "live-order-slide p-4 rounded-2xl bg-slate-800/80 border border-slate-700/60 flex items-center justify-between text-xs";
-            itemElement.innerHTML = `
-                <div class="flex items-center space-x-3">
-                    <div class="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0">
-                        <i class="fa-solid fa-box text-xs"></i>
-                    </div>
-                    <div>
-                        <div class="font-bold text-white flex items-center space-x-2">
-                            <span>${randomCode}</span>
-                            <span class="text-[10px] text-gold-400 px-2 py-0.5 rounded bg-gold-500/10 border border-gold-500/20">${randomRoute}</span>
-                        </div>
-                        <div class="text-[11px] text-gray-300 mt-0.5">${randomSender} ➔ ${randomReceiver} | <span class="text-gray-400">${randomItem}</span></div>
-                    </div>
-                </div>
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${randomStatus.color} whitespace-nowrap">${randomStatus.text}</span>
-            `;
-
-            container.prepend(itemElement);
-            if (container.children.length > 5) {
-                container.removeChild(container.lastChild);
-            }
-        }
-
-        setInterval(taoDonHangLiveMoi, 4000);
-        for(let i=0; i<3; i++) { taoDonHangLiveMoi(); }
-
-        // Chuyển tab tiện ích
         function chuyenTab(tabName) {
             ['calc', 'order', 'tracking', 'money'].forEach(t => {
-                const el = document.getElementById('tab-' + t);
-                const btn = document.getElementById('btn-' + t);
-                if(el) el.classList.add('hidden');
-                if(btn) {
-                    btn.className = "px-6 py-3 rounded-xl font-bold text-xs bg-slate-800 text-gray-300 hover:bg-slate-700 transition border border-slate-700";
-                }
+                document.getElementById('tab-' + t).classList.add('hidden');
+                document.getElementById('btn-' + t).className = 'px-6 py-3 rounded-xl font-bold text-xs bg-slate-800 text-gray-300 hover:bg-slate-700 transition border border-slate-700';
             });
-            const targetEl = document.getElementById('tab-' + tabName);
-            const targetBtn = document.getElementById('btn-' + tabName);
-            if(targetEl) targetEl.classList.remove('hidden');
-            if(targetBtn) {
-                targetBtn.className = "px-6 py-3 rounded-xl font-bold text-xs gold-gradient text-black shadow-lg transition";
-            }
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+            document.getElementById('btn-' + tabName).className = 'px-6 py-3 rounded-xl font-bold text-xs gold-gradient text-black shadow-lg transition';
         }
 
-        // Tính cước
         function tinhCuocPhi() {
             const route = document.getElementById('calc-route').value;
             const weight = parseFloat(document.getElementById('calc-weight').value) || 1;
             let rate = 45000;
             if (route === 'kr') rate = 65000;
             if (route === 'jp') rate = 70000;
-            
             const total = weight * rate;
             const res = document.getElementById('calc-result');
             res.classList.remove('hidden');
-            res.innerHTML = `Cước phí dự kiến cho ${weight} kg: <span class="text-white text-base">${total.toLocaleString()} VNĐ</span> (Đã bao gồm đóng gói & bảo hiểm)`;
+            res.innerHTML = `Cước phí dự kiến cho ${weight} kg: <span class="text-white text-base">${total.toLocaleString()} VNĐ</span> (Đã bao gồm bảo hiểm)`;
         }
 
-        // Tạo đơn hàng giả lập
         function guiDonHang(e) {
             e.preventDefault();
-            alert("Tạo đơn hàng thành công! Hệ thống đã đồng bộ dữ liệu về Google Sheets và gửi thông báo qua Telegram Bot.");
+            alert('Tạo đơn hàng thành công! Hệ thống đã đồng bộ về Admin Panel và Telegram Bot.');
             e.target.reset();
         }
 
-        // Tra cứu vận đơn
         function traCuuVanDon() {
             const code = document.getElementById('tracking-code').value.trim();
-            const resBox = document.getElementById('tracking-result');
-            const resCode = document.getElementById('res-code');
-            if(!code) {
-                alert("Vui lòng nhập mã vận đơn hoặc số điện thoại!");
+            if (!code) {
+                alert('Vui lòng nhập mã vận đơn!');
                 return;
             }
-            resCode.innerText = code.toUpperCase();
-            resBox.classList.remove('hidden');
+            document.getElementById('res-code').innerText = code;
+            document.getElementById('tracking-result').classList.remove('hidden');
         }
 
-        // Chuyển tiền
         function guiYeuCauChuyenTien(e) {
             e.preventDefault();
-            alert("Gửi yêu cầu chuyển tiền kiều hối thành công! Nhân viên sẽ liên hệ xác nhận tài khoản BVBank ngay.");
+            alert('Gửi yêu cầu chuyển tiền kiều hối thành công! Giao dịch đang chờ xác nhận qua BVBank.');
             e.target.reset();
         }
 
-        // Chatbot Widget Toggle
-        function toggleChat() {
-            const box = document.getElementById('chat-box');
-            box.classList.toggle('hidden');
+        // Live Orders Feed Simulation
+        const sampleOrders = [
+            { code: 'MCS99101', route: 'Đài Loan 🇹🇼', sender: 'Nguyễn Văn Nam', item: 'Mỹ phẩm (2kg)', status: 'Đang bay' },
+            { code: 'MCS99102', route: 'Hàn Quốc 🇰🇷', sender: 'Trần Thị Thu', item: 'Sâm & Linh kiện (4kg)', status: 'Thông quan' },
+            { code: 'MCS99103', route: 'Nhật Bản 🇯🇵', sender: 'Lê Hoàng Long', item: 'Thực phẩm chức năng (1.5kg)', status: 'Đóng gói' },
+            { code: 'MCS99104', route: 'Kiều Hối BVBank', sender: 'Phạm Minh Tuấn', item: 'Chuyển tiền 15,000 TWD', status: 'Hoàn tất' }
+        ];
+
+        function pushLiveOrder() {
+            const container = document.getElementById('live-orders-container');
+            if (!container) return;
+            const randomOrder = sampleOrders[Math.floor(Math.random() * sampleOrders.length)];
+            const timeStr = new Date().toLocaleTimeString();
+            const itemHtml = `
+                <div class="glass-card p-3.5 rounded-2xl border border-gold-500/20 flex items-center justify-between text-xs live-order-slide">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center text-black font-bold">
+                            <i class="fa-solid fa-box text-xs"></i>
+                        </div>
+                        <div>
+                            <span class="font-bold text-white">${randomOrder.code}</span> - <span class="text-gold-400">${randomOrder.route}</span>
+                            <span class="block text-[11px] text-gray-400">${randomOrder.sender} • ${randomOrder.item}</span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="px-2 py-0.5 rounded-full bg-green-500/20 text-green-400 text-[10px] font-bold">${randomOrder.status}</span>
+                        <span class="block text-[10px] text-gray-500 mt-0.5">${timeStr}</span>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('afterbegin', itemHtml);
+            if (container.children.length > 5) {
+                container.removeChild(container.lastChild);
+            }
         }
 
-        function guiTinNhanNhanh(text) {
-            const input = document.getElementById('chat-input');
-            input.value = text;
-            xuLyTinNhanNguoiDung();
-        }
-
-        function xuLyTinNhanNguoiDung() {
-            const input = document.getElementById('chat-input');
-            const msgContainer = document.getElementById('chat-messages');
-            const text = input.value.trim();
-            if(!text) return;
-
-            // Tin nhắn người dùng
-            const userDiv = document.createElement('div');
-            userDiv.className = "flex items-start justify-end space-x-2";
-            userDiv.innerHTML = `<div class="bg-amber-500 text-black p-3 rounded-2xl rounded-tr-none max-w-[80%] font-medium">${text}</div>`;
-            msgContainer.appendChild(userDiv);
-            input.value = '';
-            msgContainer.scrollTop = msgContainer.scrollHeight;
-
-            // Phản hồi AI giả lập
-            setTimeout(() => {
-                let reply = "Cảm ơn bạn đã liên hệ Mạc Chiến Sỹ. Bạn có thể sử dụng các tiện ích tính cước hoặc vào app quản trị để thao tác chi tiết nhé!";
-                if(text.toLowerCase().includes('đài loan') || text.toLowerCase().includes('cước')) {
-                    reply = "Cước phí tuyến Đài Loan tiêu chuẩn từ 45.000đ/kg, thời gian vận chuyển 2-4 ngày, bảo hiểm hàng hóa 100%!";
-                } else if(text.toLowerCase().includes('vào app') || text.toLowerCase().includes('hệ thống')) {
-                    reply = "Bạn hãy bấm nút 'Vào App' ở thanh điều hướng phía trên để chọn truy cập giao diện Khách hàng, Admin hoặc CTV nhé.";
-                } else if(text.toLowerCase().includes('tỷ giá') || text.toLowerCase().includes('tiền')) {
-                    reply = "Tỷ giá chuyển tiền Việt - Đài hôm nay cực tốt, hỗ trợ giao dịch qua tài khoản BVBank an toàn 24/7.";
-                }
-
-                const aiDiv = document.createElement('div');
-                aiDiv.className = "flex items-start space-x-2";
-                aiDiv.innerHTML = `
-                    <div class="w-7 h-7 rounded-full gold-gradient flex items-center justify-center text-black font-bold flex-shrink-0 text-xs">AI</div>
-                    <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-none text-gray-200 max-w-[80%] leading-relaxed">${reply}</div>
-                `;
-                msgContainer.appendChild(aiDiv);
-                msgContainer.scrollTop = msgContainer.scrollHeight;
-            }, 600);
-        }
+        setInterval(pushLiveOrder, 4000);
+        for(let i=0; i<3; i++) { pushLiveOrder(); }
     </script>
 </body>
 </html>
